@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query } from 'firebase/firestore';
+import { inject, Injectable } from '@angular/core';
+import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query } from '@angular/fire/firestore';
 
 
 @Injectable({
@@ -7,9 +7,7 @@ import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderB
 })
 export class FirebaseService {
 
-  constructor(
-    private firestore: Firestore,
-  ) { }
+  firestore: Firestore = inject(Firestore);
 
   public colSemillas = collection(this.firestore, 'semillas');
 

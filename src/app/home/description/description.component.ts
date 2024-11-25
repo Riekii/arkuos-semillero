@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { FirebaseService } from '../../service/firebase.service';
 
 @Component({
   selector: 'app-description',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
   templateUrl: './description.component.html',
   styleUrl: './description.component.scss'
 })
-export class DescriptionComponent {
+export class DescriptionComponent implements OnInit{
+  fireService = inject(FirebaseService);
 
+  ngOnInit(): void {
+    console.log(this.fireService.addSemilla({l: 'l'}))
+  }
 }
