@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { FirebaseService } from '../../../service/firebase.service';
 
 @Component({
   selector: 'app-seed-modal',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
   templateUrl: './seed-modal.component.html',
   styleUrl: './seed-modal.component.scss'
 })
-export class SeedModalComponent {
+export class SeedModalComponent implements OnInit{
 
+  fire = inject(FirebaseService);
+
+  public seeds$: any;
+
+  ngOnInit(): void {
+    this.getSeeds();
+  }
+
+  getSeeds(){
+    this.fire.getSeeds().subscribe((resp: any) => {
+      console.log(resp)
+    })
+  }
 }

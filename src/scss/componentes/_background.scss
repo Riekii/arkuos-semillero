@@ -1,0 +1,27 @@
+.background-full{
+    width: 100%;
+    height: 100vh;
+
+    background-image: url('../../assets/logo.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+
+.background-full.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.background-full.title 
+
+
+
+h2{
+    display: block;
+    color: red;
+    background-color: orange;
+}

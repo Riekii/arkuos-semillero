@@ -9,9 +9,7 @@ import { FirebaseService } from '../../service/firebase.service';
   styleUrl: './description.component.scss'
 })
 export class DescriptionComponent implements OnInit{
-  fireService = inject(FirebaseService);
 
   ngOnInit(): void {
-    console.log(this.fireService.addSemilla({l: 'l'}))
   }
 }

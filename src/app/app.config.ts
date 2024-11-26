@@ -10,17 +10,19 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { getStorage, provideStorage } from '@angular/fire/storage';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { BrowserModule } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
-    provideFirestore(() => getFirestore()), provideFirebaseApp(() => initializeApp({"projectId":"ark-semillero","appId":"1:1086444225358:web:5c282a83d9f3105fdf541f","databaseURL":"https://ark-semillero-default-rtdb.europe-west1.firebasedatabase.app","storageBucket":"ark-semillero.firebasestorage.app","apiKey":"AIzaSyAAFvdWochJad6BEf_MS6eRrNlA8jStQ4E","authDomain":"ark-semillero.firebaseapp.com","messagingSenderId":"1086444225358","measurementId":"G-HLZTM26R61"})), 
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
+    provideFirestore(() => getFirestore()), provideFirebaseApp(() => initializeApp(environment.firebase)), 
     provideAuth(() => getAuth()), 
     provideFirestore(() => getFirestore()), 
     provideDatabase(() => getDatabase()), 
     providePerformance(() => getPerformance()), 
-    provideStorage(() => getStorage()),
   ]
 };
 // bootstrapApplication(AppComponent, {

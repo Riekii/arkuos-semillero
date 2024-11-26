@@ -1,5 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -7,28 +8,29 @@ import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderB
 })
 export class FirebaseService {
 
-  firestore: Firestore = inject(Firestore);
+  public fire = inject(Firestore);
 
-  public colSemillas = collection(this.firestore, 'semillas');
+  public colSeeds = collection(this.fire, 'semillas');
+  public seeds$!: Observable<any[]>;
 
   // ======================================================================
   // SEMILLAS
   // ======================================================================
   // AÑADIR NUEVA SEMILLA
   public addSemilla(semilla: any) {
-    return addDoc(this.colSemillas, semilla);
+    return addDoc(this.colSeeds, semilla);
   }
   // RECOGER LISTADO DE sSEMILLAS 
-  public getSemilla() {
-    let semQuery = query(this.colSemillas, orderBy("time", "desc"), limit(100));
-    return collection(this.firestore, 'semillero')
+  public getSeeds() {
+    this.seeds$ = collectionData(this.colSeeds) as Observable<any[]>;
+    return this.seeds$;
   }
   // EDITAR UNA CANCION
   public editSong(reference: string, semilla: any) {
-    updateDoc(doc(this.firestore, "semillas", reference), semilla);
+    updateDoc(doc(this.fire, "semillas", reference), semilla);
   }
   // QUITAR UNA CANCION
   public delSong(reference: any) {
-    deleteDoc(doc(this.firestore, "semillas", reference));
+    deleteDoc(doc(this.fire, "semillas", reference));
   }
 }
