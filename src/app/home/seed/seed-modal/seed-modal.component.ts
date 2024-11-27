@@ -23,48 +23,16 @@ export class SeedModalComponent implements OnInit {
   getSeeds() {
     this.fire.getSeeds().subscribe((resp: any) => {
       this.seeds = resp;
-      this.prueba();
-
     })
   }
 
-
-  prueba() {
-    for (
-      let index = 0;
-      index < this.seeds.length;
-      index++) {
-      console.warn('SEMILLAS', index)
-      const element = this.seeds[index];
+  sendSeed(){
+    let semilla = {
+      nombre: 'pepito',
+      foto: 'https://blog.agroptima.com/wp-content/uploads/2015/11/semilla-certificada-o-no.jpg',
+      descripcion: 'Un popito es un animal salvaje muy peligroso'
     }
-
-    if (this.seeds.length === 4) {
-      console.log('HAY 4 SEMILLAS')
-    } else {
-      console.log('JAJA')
-    }
-
-    switch (this.seeds.length) {
-      case 1:
-        // solo hay 1
-        break;
-      case 2:
-
-        break;
-      case 3:
-
-        break;
-      case 4:
-
-        break;
-
-      default:
-        console.warn('hay demasiadas')
-        break;
-    }
-
-    setTimeout(() => {
-      console.error('BOOOM')
-    }, 6000);
+    this.fire.addSemilla(semilla);
   }
+
 }

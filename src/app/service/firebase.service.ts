@@ -20,16 +20,16 @@ export class FirebaseService {
   public addSemilla(semilla: any) {
     return addDoc(this.colSeeds, semilla);
   }
-  // RECOGER LISTADO DE sSEMILLAS 
+  // RECOGER LISTADO DE SEMILLAS 
   public getSeeds() {
     this.seeds$ = collectionData(this.colSeeds) as Observable<any[]>;
     return this.seeds$;
   }
-  // EDITAR UNA CANCION
+  // EDITAR UNA SEMILLA
   public editSong(reference: string, semilla: any) {
     updateDoc(doc(this.fire, "semillas", reference), semilla);
   }
-  // QUITAR UNA CANCION
+  // QUITAR UNA SEMILLA
   public delSong(reference: any) {
     deleteDoc(doc(this.fire, "semillas", reference));
   }
