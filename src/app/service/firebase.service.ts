@@ -22,15 +22,15 @@ export class FirebaseService {
   }
   // RECOGER LISTADO DE SEMILLAS 
   public getSeeds() {
-    this.seeds$ = collectionData(this.colSeeds) as Observable<any[]>;
+    this.seeds$ = collectionData(this.colSeeds, { idField: 'id' }) as Observable<any[]>;
     return this.seeds$;
   }
   // EDITAR UNA SEMILLA
-  public editSong(reference: string, semilla: any) {
+  public editSeed(reference: string, semilla: any) {
     updateDoc(doc(this.fire, "semillas", reference), semilla);
   }
   // QUITAR UNA SEMILLA
-  public delSong(reference: any) {
+  public delSeed(reference: any) {
     deleteDoc(doc(this.fire, "semillas", reference));
   }
 }

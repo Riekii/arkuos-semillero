@@ -35,4 +35,7 @@ export class SeedModalComponent implements OnInit {
     this.fire.addSemilla(semilla);
   }
 
+  delSeed(seedId: string){
+    this.fire.delSeed(seedId)
+  }
 }
