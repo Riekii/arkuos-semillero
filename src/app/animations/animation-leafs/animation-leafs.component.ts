@@ -11,6 +11,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class AnimationLeafsComponent implements OnInit {
 
   @Input() even: boolean = false;
+  @Input() type!: string;
 
 
   public height: string = '0px';

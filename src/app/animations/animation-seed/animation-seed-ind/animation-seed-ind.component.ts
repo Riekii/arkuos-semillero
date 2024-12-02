@@ -16,6 +16,8 @@ export class AnimationSeedIndComponent implements OnInit {
   public height: string = '0px';
   public width: string = '0px';
   public border: string = '';
+
+  public type: string = 'leaf';
   
   public leafs: any = [{ type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }]
 
