@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-animation-leafs',
+  selector: 'leafs',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './animation-leafs.component.html',
@@ -13,7 +13,6 @@ export class AnimationLeafsComponent implements OnInit {
   @Input() even: boolean = false;
   @Input() type!: string;
 
-
   public height: string = '0px';
   public width: string = '0px';
   public border: string = '';
@@ -23,7 +22,7 @@ export class AnimationLeafsComponent implements OnInit {
     setTimeout(() => {
       this.height = '150px';
       this.width = '150px';
-    }, 1500);
+    }, 400);
   }
 
 }
