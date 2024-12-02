@@ -1,0 +1,13 @@
+.leaf-container{
+    display: flex;
+    border-left: none !important;
+    background: rgb(10, 124, 0);
+    border-radius: 100px 0 100px 0;
+    transition: 1.5s ease-in-out all;
+    margin-top: -30px;
+
+    &.even{
+        margin-left: -150px;
+        border-radius: 0 100px 0 100px;
+    }
+}

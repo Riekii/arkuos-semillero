@@ -1,0 +1,14 @@
+<div 
+class="seed-background" 
+[style.width]="width" 
+[style.height]="height" 
+[style.border-left]="border" 
+[style.border-right]="border"
+>
+<app-animation-leafs 
+*ngFor="let leaf of leafs; index as i"
+[even]="i % 2 === 0"
+></app-animation-leafs>
+
+
+</div>
