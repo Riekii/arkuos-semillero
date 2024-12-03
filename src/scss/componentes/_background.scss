@@ -6,6 +6,9 @@
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: center;
+    z-index: -10;
+
+    background: var(--blue-light)
 }
 
 .background-full.title{

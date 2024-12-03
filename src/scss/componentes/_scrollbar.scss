@@ -1,0 +1,22 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    transition: 0.5s ease-in-out all;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--blue-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    transition: 0.5s ease-in-out all;
+    background: var(--blue-mid);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    cursor:grab;
+    background: var(--blue-dark);
+}

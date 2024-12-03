@@ -6,9 +6,12 @@
     transition: 1.5s ease-in-out all;
     box-shadow: 5px 10px rgb(0, 0, 0, 0.2);
 
-    border-color: rgb(0, 112, 0) !important;
+    border-color: var(--green-mid) !important;
+    border-radius: 5px;
 
     &.leaftype-leafback{
-        border-color: rgb(0, 54, 0) !important;
+        border-color: var(--green-dark) !important;
     }
+
+    z-index: 100;
 }

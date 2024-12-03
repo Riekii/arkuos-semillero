@@ -11,16 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AnimationSeedComponent implements OnInit{
 
-  public height: string = '0px';
-  public width: string = '0px';
-
   public seedsNumber: any = [1,1,1,1,1,1,1,1]
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.height = '20em';
-      this.width = '300px';
-    }, 400);
   }
 
 }

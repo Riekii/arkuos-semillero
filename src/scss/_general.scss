@@ -1,0 +1,8 @@
+@import 'colors';
+
+:root{
+    @extend %dayMode;
+}
+
+@import 'componentes/background';
+@import 'componentes/scrollbar';

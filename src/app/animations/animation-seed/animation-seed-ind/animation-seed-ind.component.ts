@@ -11,13 +11,14 @@ import { CommonModule } from '@angular/common';
 })
 export class AnimationSeedIndComponent implements OnInit {
   public minHeight: number = 300;
-  public maxHeight: number = 700;
+  public maxHeight: number = 800;
 
   public height: string = '0px';
   public width: string = '0px';
   public border: string = '';
 
   @Input() type: string = 'leaf';
+  @Input() index: number = 0;
   
   public leafs: any = [1,1,1,1]
 
@@ -25,11 +26,15 @@ export class AnimationSeedIndComponent implements OnInit {
     setTimeout(() => {
       if(this.type === 'leaf'){
         this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
-        this.border = "solid 12px"
+        this.border = "solid 12px";
       }
       else if(this.type === 'leafback'){
         this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
         this.border = "solid 12px"
+      }
+
+      if (this.index >= 2 && this.index < 6) {
+        this.height = this.getRandomInt(this.minHeight / 2, this.maxHeight / 2) + 'px';
       }
 
     }, 400);
