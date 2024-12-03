@@ -2,7 +2,7 @@
     display: flex;
     position: absolute;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-end;
     bottom: 0;
     left: 0;
@@ -10,8 +10,16 @@
     height: 100vh;
     overflow: hidden;
 
-    background-color: rgb(171, 236, 246);
-    // height: 400px;
+    opacity: 0.9;
 
-    // background: grey;
+    &.front {
+        position: absolute;
+        top: 0;
+        justify-content: space-around;
+        opacity: 1;
+    }
+
+    &.back {
+        background: rgb(106, 213, 255);
+    }
 }

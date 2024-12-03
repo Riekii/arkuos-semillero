@@ -1,6 +1,7 @@
-<div class="seed-container">
-    <app-animation-seed-ind></app-animation-seed-ind>
-    <app-animation-seed-ind></app-animation-seed-ind>
-    <app-animation-seed-ind></app-animation-seed-ind>
-    <app-animation-seed-ind></app-animation-seed-ind>
+
+<div class="seed-container back">
+    <app-animation-seed-ind *ngFor="let seed of seedsNumber" [type]="'leafback'"></app-animation-seed-ind>
+</div>
+<div class="seed-container front">
+    <app-animation-seed-ind *ngFor="let seed of seedsNumber"></app-animation-seed-ind>
 </div>

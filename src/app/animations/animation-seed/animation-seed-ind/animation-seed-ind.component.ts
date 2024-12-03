@@ -10,22 +10,28 @@ import { CommonModule } from '@angular/common';
   styleUrl: './animation-seed-ind.component.scss'
 })
 export class AnimationSeedIndComponent implements OnInit {
-  public minHeight: number = 500;
+  public minHeight: number = 300;
   public maxHeight: number = 700;
 
   public height: string = '0px';
   public width: string = '0px';
   public border: string = '';
 
-  public type: string = 'leaf';
+  @Input() type: string = 'leaf';
   
-  public leafs: any = [{ type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }, { type: 'leaf' }]
+  public leafs: any = [1,1,1,1]
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
-      this.border = "solid 12px"
-      // this.width = this.getRandomInt(10, 20)+'px';
+      if(this.type === 'leaf'){
+        this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
+        this.border = "solid 12px"
+      }
+      else if(this.type === 'leafback'){
+        this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
+        this.border = "solid 12px"
+      }
+
     }, 400);
   }
 
