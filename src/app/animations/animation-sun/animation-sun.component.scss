@@ -1,0 +1,36 @@
+.rayoContainer{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    opacity: 0.1;
+}
+.rayo{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--yellow-light);
+    // opacity: 0.2;
+    clip-path: polygon(91% 0, 100% 0, 100% 8%, 44% 100%, 0 100%, 0 69%);
+    top: 0;
+    right: 0;
+    position: fixed;
+    overflow: hidden;
+
+    p{
+        rotate: -40deg;
+        font-size: 4em;
+
+        font-weight: bold;
+        top: 10vh;
+    }
+
+    &.top{
+        clip-path: polygon(91% 0, 100% 0, 100% 3%, 0 42%, 0 42%, 0 20%);
+    }
+
+    &.bot{
+        clip-path: polygon(95% 0, 100% 0, 100% 9%, 78% 100%, 57% 100%, 57% 100%);
+        
+    }
+}

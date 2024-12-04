@@ -24,19 +24,18 @@ export class AnimationSeedIndComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      if(this.type === 'leaf'){
-        this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
-        this.border = "solid 12px";
-      }
-      else if(this.type === 'leafback'){
-        this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
-        this.border = "solid 12px"
-      }
-
+      // PONEMOS LAS HOJAS POR DEFECTO
+      this.getStandardLeafs()
       if (this.index >= 2 && this.index < 6) {
-        this.height = this.getRandomInt(this.minHeight / 2, this.maxHeight / 2) + 'px';
+        this.height = this.getRandomInt(this.minHeight * 3, this.maxHeight *3) + 'px';
+        // ESTAS HOJAS VAN A TAPAR EL LOGO DE ARKUOS
+        this.leafs = [...this.leafs, ...this.leafs, ...this.leafs]
+        setTimeout(() => {
+          this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/2) + 'px';
+        }, 1000);
       }
 
+      
     }, 400);
   }
 
@@ -44,6 +43,17 @@ export class AnimationSeedIndComponent implements OnInit {
     min = Math.ceil(min); // Redondea hacia arriba el mínimo
     max = Math.floor(max); // Redondea hacia abajo el máximo
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  getStandardLeafs(){
+    if(this.type === 'leaf'){
+      this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
+      this.border = "solid 12px";
+    }
+    else if(this.type === 'leafback'){
+      this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
+      this.border = "solid 12px"
+    }
   }
 
 }
