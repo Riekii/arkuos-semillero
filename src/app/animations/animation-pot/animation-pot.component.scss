@@ -1,0 +1,30 @@
+.pot-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: fit-content;
+    width: 500px;
+
+    .pot-top {
+        background: rgb(119, 30, 30);
+        width: 270px;
+        height: 30px;
+        border-radius: 5px;
+        z-index: 100;
+    }
+
+    .pot-base {
+        clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+        background: brown;
+        width: 250px;
+        height: 150px;
+
+        display: flex;
+        flex-direction: column;
+
+        border-radius: 25% / 0 0 100px 100px;
+        z-index: 100;
+    }
+}

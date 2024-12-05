@@ -1,0 +1,41 @@
+div.corn-container {
+    margin-bottom: -100px;
+    position: relative;
+    .corn {
+        --long: 300px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        background: yellow;
+        height: var(--long);
+        width: var(--long);
+        rotate: 45deg;
+
+        border-radius: 100px 1000px 0 1000px;
+    }
+
+
+    
+    .leaf {
+        --distancetoborder: 40px;
+       position: absolute;
+       width: 50px;
+       height: 300px;
+       background: green;
+       bottom: 0;
+       z-index: 100;
+        left: var(--distancetoborder);
+
+        border-radius: 0 100px 0 100px;
+        rotate: -10deg;
+
+       &.leaf-end{
+        rotate: 10deg;
+        border-radius: 100px 0 100px 0;
+        left: auto;
+        right: var(--distancetoborder);
+       }
+    }
+}
