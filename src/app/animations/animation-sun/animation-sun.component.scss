@@ -4,18 +4,20 @@
     top: 0;
     right: 0;
     overflow: hidden;
-    opacity: 0.1;
+    opacity: 0.2;
 }
 .rayo{
-    width: 100vw;
-    height: 100vh;
+    width: 0vw;
+    height: 0vh;
     background-color: var(--yellow-light);
     // opacity: 0.2;
     clip-path: polygon(91% 0, 100% 0, 100% 8%, 44% 100%, 0 100%, 0 69%);
     top: 0;
     right: 0;
     position: fixed;
+    // z-index: -100;
     overflow: hidden;
+    transition: 0.3s ease-in-out all;
 
     p{
         rotate: -40deg;
@@ -31,6 +33,10 @@
 
     &.bot{
         clip-path: polygon(95% 0, 100% 0, 100% 9%, 78% 100%, 57% 100%, 57% 100%);
-        
+    }
+
+    &.active{
+        width: 100vw;
+        height: 100vh;
     }
 }
