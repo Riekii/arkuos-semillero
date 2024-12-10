@@ -13,6 +13,9 @@
         height: 30px;
         border-radius: 5px;
         z-index: 100;
+
+                border-bottom-left-radius: 50% 200px;
+                    border-bottom-right-radius: 50% 200px;
     }
 
     .pot-base {
@@ -26,5 +29,7 @@
 
         border-radius: 25% / 0 0 100px 100px;
         z-index: 100;
+
+
     }
 }
