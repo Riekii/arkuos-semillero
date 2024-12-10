@@ -1,22 +1,52 @@
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-    transition: 0.5s ease-in-out all;
+:root {
+
+    /* width */
+    ::-webkit-scrollbar {
+        // width: 10px;
+        width: 0px;
+        transition: 0.5s ease-in-out all;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--blue-light);
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        transition: 0.5s ease-in-out all;
+        background: var(--blue-mid);
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        cursor: grab;
+        background: var(--blue-dark);
+    }
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: var(--blue-light);
-}
+%scrollDirt {
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    transition: 0.5s ease-in-out all;
-    background: var(--blue-mid);
-}
+    /* width */
+    &::-webkit-scrollbar {
+        width: 10px;
+        transition: 0.5s ease-in-out all;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    cursor:grab;
-    background: var(--blue-dark);
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: var(--brown-light);
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        transition: 0.5s ease-in-out all;
+        background: var(--brown-mid);
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        cursor: grab;
+        background: var(--brown-dark);
+    }
 }

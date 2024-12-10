@@ -39,37 +39,5 @@
         cursor: grab;
     }
 
-    animation:spin 4s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform-origin: 100% 100%;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform-origin: 100% 100%;
-        -webkit-transform: rotate(-4deg);
-        transform: rotate(-4deg);
-    }
-
-    50% {
-        transform-origin: 100% 100%;
-        -webkit-transform: rotate(-8deg);
-        transform: rotate(-8deg);
-    }
-
-    75% {
-        transform-origin: 100% 100%;
-        -webkit-transform: rotate(-4deg);
-        transform: rotate(-4deg);
-    }
-
-    100% {
-        transform-origin: 100% 100%;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
+    animation:wind 4s linear infinite;
 }

@@ -10,5 +10,7 @@ import { AnimationPotComponent } from '../../animation-pot/animation-pot.compone
   styleUrl: './corn.component.scss'
 })
 export class CornComponent {
-
+  popcornStart(){
+    console.log('palomitas!')
+  }
 }

@@ -1,6 +1,8 @@
 div.corn-container {
     margin-bottom: -100px;
     position: relative;
+    max-width: 100%;
+
     .corn {
         --long: 300px;
 
@@ -8,34 +10,47 @@ div.corn-container {
         flex-direction: column;
         justify-content: flex-end;
 
-        background: yellow;
+        background: rgb(234, 255, 23);
+        background: linear-gradient(185deg, rgb(234, 255, 23) 46%, rgb(211, 230, 20) 45%);
+
         height: var(--long);
         width: var(--long);
         rotate: 45deg;
 
         border-radius: 100px 1000px 0 1000px;
+
+        transition: 0.3s all ease-out;
+        &:hover {
+            cursor: grab;
+            height: calc(var(--long) + 6px);
+            width: calc(var(--long) + 6px);
+            margin-bottom: -4px;
+        }
     }
 
 
-    
+
     .leaf {
         --distancetoborder: 40px;
-       position: absolute;
-       width: 50px;
-       height: 300px;
-       background: green;
-       bottom: 0;
-       z-index: 100;
-        left: var(--distancetoborder);
+        position: absolute;
+        width: 50px;
+        height: 300px;
+        background: rgb(0, 180, 0);
+        background: linear-gradient(220deg, rgb(0, 180, 0) 38%, rgb(0, 128, 0) 39%);
+        bottom: 0;
+        z-index: 100;
+        left: calc(var(--distancetoborder) + 6px);
 
         border-radius: 0 100px 0 100px;
         rotate: -10deg;
 
-       &.leaf-end{
-        rotate: 10deg;
-        border-radius: 100px 0 100px 0;
-        left: auto;
-        right: var(--distancetoborder);
-       }
+        animation: lightwind 4s linear infinite;
+
+        &.leaf-end {
+            rotate: 10deg;
+            border-radius: 100px 0 100px 0;
+            left: auto;
+            right: var(--distancetoborder);
+        }
     }
 }
