@@ -1,0 +1,31 @@
+@keyframes explode {
+    0% {
+        top: var(--mInitial);
+        left: var(--lInitial);
+        transition: linear;
+        -webkit-transform: rotate(60deg);
+        transform: rotate(40deg);
+    }
+
+    30% {
+        top: var(--mMax);
+        left: var(--lMax);
+        transition: linear;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+        z-index: 1000;
+    }
+
+    80%{
+        opacity: 0.6;
+    }
+
+    100% {
+        top: var(--mMin);
+        left: var(--lMax);
+        transition: ease-in;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}

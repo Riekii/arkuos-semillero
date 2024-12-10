@@ -1,0 +1,29 @@
+@keyframes falling {
+    0% {
+        top: var(--mInitial);
+        left: var(--lInitial);
+        transition: ease-out;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        top: var(--mMax);
+        left: var(--lMax);
+        transition: ease-in;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+    100% {
+        top: var(--mMin);
+        left: var(--lMin);
+        transition: ease-in;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+// @function fallingFunction($mInitial, $lInitial, $mMax, $lMax, $mMin, $lMax) {
+//     @return falling
+// }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AnimationLeafsComponent } from '../../animation-leafs/animation-leafs.component';
 import { CommonModule } from '@angular/common';
+import { SharedService } from '../../../service/shared.service';
 
 @Component({
   selector: 'app-animation-seed-ind',
@@ -20,18 +21,22 @@ export class AnimationSeedIndComponent implements OnInit {
   @Input() type: string = 'leaf';
   @Input() index: number = 0;
   
-  public leafs: any = [1,1,1,1]
+  public leafs: any = [1,1,1,1];
+
+  constructor(
+    public shared: SharedService
+  ){}
 
   ngOnInit(): void {
     setTimeout(() => {
       // PONEMOS LAS HOJAS POR DEFECTO
       this.getStandardLeafs()
       if (this.index >= 2 && this.index < 6) {
-        this.height = this.getRandomInt(this.minHeight * 3, this.maxHeight *3) + 'px';
+        this.height = this.shared.getRandomInt(this.minHeight * 3, this.maxHeight *3) + 'px';
         // ESTAS HOJAS VAN A TAPAR EL LOGO DE ARKUOS
         this.leafs = [...this.leafs, ...this.leafs, ...this.leafs]
         setTimeout(() => {
-          this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/2) + 'px';
+          this.height = this.shared.getRandomInt(this.minHeight/2, this.maxHeight/2) + 'px';
         }, 1000);
       }
 
@@ -39,19 +44,15 @@ export class AnimationSeedIndComponent implements OnInit {
     }, 400);
   }
 
-  getRandomInt(min: number, max: number): number {
-    min = Math.ceil(min); // Redondea hacia arriba el mínimo
-    max = Math.floor(max); // Redondea hacia abajo el máximo
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+
 
   getStandardLeafs(){
     if(this.type === 'leaf'){
-      this.height = this.getRandomInt(this.minHeight, this.maxHeight) + 'px';
+      this.height = this.shared.getRandomInt(this.minHeight, this.maxHeight) + 'px';
       this.border = "solid 12px";
     }
     else if(this.type === 'leafback'){
-      this.height = this.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
+      this.height = this.shared.getRandomInt(this.minHeight/2, this.maxHeight/1.5) + 'px';
       this.border = "solid 12px"
     }
   }

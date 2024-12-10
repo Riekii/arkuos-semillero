@@ -20,12 +20,6 @@ div.corn-container {
         border-radius: 100px 1000px 0 1000px;
 
         transition: 0.3s all ease-out;
-        &:hover {
-            cursor: grab;
-            height: calc(var(--long) + 6px);
-            width: calc(var(--long) + 6px);
-            margin-bottom: -4px;
-        }
     }
 
 
@@ -33,18 +27,19 @@ div.corn-container {
     .leaf {
         --distancetoborder: 40px;
         position: absolute;
-        width: 50px;
+        width: 80px;
         height: 300px;
         background: rgb(0, 180, 0);
         background: linear-gradient(220deg, rgb(0, 180, 0) 38%, rgb(0, 128, 0) 39%);
         bottom: 0;
         z-index: 100;
-        left: calc(var(--distancetoborder) + 6px);
+        left: calc(var(--distancetoborder) + 8px);
 
         border-radius: 0 100px 0 100px;
         rotate: -10deg;
 
-        animation: lightwind 4s linear infinite;
+        transition: 0.6s all ease-in-out;
+        animation: 3s lightwind linear infinite;
 
         &.leaf-end {
             rotate: 10deg;
@@ -52,5 +47,33 @@ div.corn-container {
             left: auto;
             right: var(--distancetoborder);
         }
+
+        &:hover{
+            transition: 0.3s !important;
+        }
+    }
+
+    &:hover {
+        .corn {
+            cursor: grab;
+            height: calc(var(--long) + 6px);
+            width: calc(var(--long) + 6px);
+            margin-bottom: -4px;
+        }
+
+        .leaf {
+            animation: 1s lightwind infinite linear;
+        }
+
+    }
+
+    .popCorn {
+        &:hover {
+            cursor: grab;
+        }
+    }
+
+    &:active .corn{
+        cursor: grabbing;
     }
 }
