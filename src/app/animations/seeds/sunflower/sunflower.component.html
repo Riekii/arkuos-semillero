@@ -1,17 +1,16 @@
 <pot>
     <div class="sunflower-container">
         <div class="pipes">
+            <div class="flower" *ngFor="let flower of flowers; index as i" [style]="'--nFlower:'+i*22+'deg'"></div>
+            <div class="flower" *ngFor="let flower of flowers; index as i" [style]="'--nFlower:'+i*22+'deg'"></div>
+            <sun-pipe *ngFor="let pipe of pipes"></sun-pipe>
+            <div class="pipes top"></div>
         </div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
-        <div class="flower"></div>
+
         <div class="branch" (click)="sunflowerStart()">
             <div class="leaf"></div>
             <div class="leaf"></div>
         </div>
-            <!-- <popcorn class="popCorn" *ngFor="let popcorn  of popcorns" [popCorn]="popcorn"></popcorn> -->
+        <!-- <popcorn class="popCorn" *ngFor="let popcorn  of popcorns" [popCorn]="popcorn"></popcorn> -->
     </div>
 </pot>

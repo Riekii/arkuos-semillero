@@ -29,3 +29,20 @@
         opacity: 0;
     }
 }
+
+@keyframes explode-nogravity {
+    0% {
+        transition: linear;
+        -webkit-transform: rotate(60deg);
+        transform: rotate(40deg);
+    }
+
+    100% {
+        top: var(--mMin);
+        left: var(--lMax);
+        transition: ease-in;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        opacity: 0;
+    }
+}

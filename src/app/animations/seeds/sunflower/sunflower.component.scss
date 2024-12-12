@@ -15,25 +15,32 @@ div.sunflower-container {
         justify-content: center;
         align-items: center;
 
+        &.top {
+            position: absolute;
+        }
+
         div.flower {
             position: absolute;
 
             width: 40px;
-            height: 220px;
-            background: yellow;
-            border: red 1px solid;
-            left: calc(50% - 20px);
-            top: 9;
+            height: 260px;
+            background: var(--yellow-mid);
 
-            border-radius: 100px 0 100px 0;
+            clip-path: ellipse(55% 50% at 50% 50%);
+            transform-origin: center !important;
 
-            transform-origin: bottom !important;
-            // z-index: -500 !important;
+            background: rgb(232, 255, 26);
+            background: linear-gradient(90deg, var(--yellow-mid) 50%, var(--yellow-light) 50%);
+
+            rotate: var(--nFlower);
+
+            animation: wind 4s linear infinite;
         }
     }
 
     div.branch {
-        background: var(--green-mid);
+        background: rgb(1, 163, 1);
+        background: linear-gradient(23deg, rgba(1, 163, 1, 1) 27%, rgba(0, 112, 0, 1) 27%);
         height: 200px;
         width: 20px;
         margin-top: -50px;
