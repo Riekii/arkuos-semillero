@@ -3,4 +3,26 @@ button{
     background: white;
     color: white;
     border: 1px solid black;
+
+    &.btn-dirt{
+        background: none;
+        background-image: url('../../assets/textures/dirt-background.webp');
+        border-color: var(--brown-mid);
+        font-size: 1.4em;
+        background-size: 50px;
+        &:hover{
+            border-color: var(--brown-mid);
+            background: var(--brown-light);
+        }
+
+        &:active{
+            background: var(--brown-dark)
+        }
+    }
+
+    // &.tiny{
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: center;
+    // }
 }
