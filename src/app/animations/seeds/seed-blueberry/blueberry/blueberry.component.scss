@@ -1,0 +1,43 @@
+.blueberry {
+    width: 60px;
+    height: 60px;
+
+    .noexplode-blue, .explode-blue{
+        background-color: blue;
+        width: 60px;
+        height: 60px;
+        border-radius: 100px;
+
+        transition: 0.2s ease-in-out all;
+    }
+
+    &.even {
+        margin-left: -50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    &.exploded {
+
+        .noexplode-blue{
+            height: 10px;
+            width: 10px;
+        }
+
+        .explode-blue {
+            position: fixed;
+            cursor: pointer;
+
+
+            z-index: 200;
+
+            width: 300px;
+            height: 300px;
+            border-radius: 400px;
+
+            transform-origin: 50% 50%;
+            animation: splash 2s ease-in;
+        }
+    }
+}

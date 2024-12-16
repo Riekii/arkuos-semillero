@@ -1,0 +1,19 @@
+.blue-container{
+    background-color: var(--green-light);
+    width: 10px;
+    height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .blueberry{
+        width: 40px;
+        height: 40px;
+
+        border-radius: 100px;
+        background-color: blue;
+
+        gap: 10px;
+    }
+}

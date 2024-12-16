@@ -1,0 +1,6 @@
+<div class="blueberry" (click)="explode()" [style]="style" [ngClass]="{'even': index % 2 === 0, 'exploded': exploded}">
+    <div class="noexplode-blue">
+    </div>
+    <div *ngIf="exploded" class="explode-blue">
+    </div>
+</div>
