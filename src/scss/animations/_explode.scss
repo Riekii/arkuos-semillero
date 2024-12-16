@@ -37,12 +37,18 @@
         transform: rotate(40deg);
     }
 
+    90%{
+        opacity: 1;
+        -webkit-transform: rotate(360deg);
+    }
+
     100% {
-        top: var(--mMin);
-        left: var(--lMax);
+        margin-top: var(--mMax);
+        margin-left: var(--lMax);
         transition: ease-in;
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
+        // -webkit-transform: rotate(0deg);
+        // transform: rotate(0deg);
         opacity: 0;
+        -webkit-transform: rotate(360deg);
     }
 }

@@ -3,11 +3,11 @@
         <div class="pipes">
             <div class="flower" *ngFor="let flower of flowers; index as i" [style]="'--nFlower:'+i*22+'deg'"></div>
             <div class="flower" *ngFor="let flower of flowers; index as i" [style]="'--nFlower:'+i*22+'deg'"></div>
-            <sun-pipe *ngFor="let pipe of pipes"></sun-pipe>
-            <div class="pipes top"></div>
+            <sun-pipe *ngFor="let pipe of pipes"  [pipe]="pipe"></sun-pipe>
+            <div class="pipes top" (click)="sunflowerStart()"></div>
         </div>
 
-        <div class="branch" (click)="sunflowerStart()">
+        <div class="branch">
             <div class="leaf"></div>
             <div class="leaf"></div>
         </div>

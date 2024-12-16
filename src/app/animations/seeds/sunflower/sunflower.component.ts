@@ -25,15 +25,18 @@ export class SunflowerComponent implements OnInit{
       this.flowers.push({
         flower: 'yes :)'
       })
-      this.pipes.push ({
-        mMax: this.shared.getRandomInt(-100, 100) + 'vh',
-        lMax: this.shared.getRandomInt(-100, 100) + 'vw',
-      })
       
+
     }
   }
 
   public sunflowerStart(){
-
+    this.pipes.push({
+      mMax: this.shared.getRandomInt(-100, 100) + 'vh',
+      lMax: this.shared.getRandomInt(-100, 100) + 'vw',
+    })
+    setTimeout(() => {
+      this.pipes.shift()
+    }, 1000);
   }
 }

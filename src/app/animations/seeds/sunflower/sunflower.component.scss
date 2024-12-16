@@ -4,6 +4,9 @@ div.sunflower-container {
     justify-content: center;
     align-items: center;
 
+    overflow: hidden;
+    max-width: 100%;
+
     div.pipes {
         width: 100px;
         height: 100px;
@@ -17,6 +20,11 @@ div.sunflower-container {
 
         &.top {
             position: absolute;
+            cursor: grab;
+
+            &:active{
+                cursor: grabbing;
+            }
         }
 
         div.flower {

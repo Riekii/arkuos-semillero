@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'sun-pipe',
@@ -8,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './pipe.component.scss'
 })
 export class PipeComponent implements OnInit{
-  ngOnInit(): void {
-    // let mMax = '--mMax: ' + this.popCorn.mMax + '; ';
-    // let mMax = '--mMax: ' + this.popCorn.mMax + '; ';
 
+  @Input() pipe!: any;
+
+  public style!: string;
+
+  
+  ngOnInit(): void {
+    let mMax = '--mMax: ' + this.pipe.mMax + '; ';
+    let lMax = '--lMax: ' + this.pipe.lMax + '; ';
+
+    this.style = mMax + lMax;
   }
 }

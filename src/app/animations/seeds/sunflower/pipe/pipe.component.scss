@@ -3,12 +3,17 @@
     z-index: 200;
     background: var(--white-dark);
     background: linear-gradient(134deg, var(--white-dark) 30%, var(--white-light) 50%, var(--white-dark) 50%);
-    
+
     width: 40px;
     height: 40px;
-    left: calc(48%);
+
+    left: 48%;
     margin-top: -20px;
     border-radius: 200px 80px 200px 0;
+    
+    z-index: 10;
 
-    animation: explode-nogravity 3s ease-out;
+    animation: explode-nogravity 1s ease-out;
+
+    overflow: hidden;
 }
