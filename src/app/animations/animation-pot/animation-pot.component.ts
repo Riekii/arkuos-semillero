@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pot',
@@ -9,5 +9,7 @@ import { Component } from '@angular/core';
   styleUrl: './animation-pot.component.scss'
 })
 export class AnimationPotComponent {
+
+  @Input() seedData: any;
 
 }

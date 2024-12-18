@@ -4,14 +4,17 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xl-4">
-            <seed-corn></seed-corn>
-        </div>
-        <div class="col-12 col-xl-4">
-            <seed-sunflower></seed-sunflower>
-        </div>
-        <div class="col-12 col-xl-4">
-            <seed-blueberry></seed-blueberry>
+        <div class="col-12 col-xl-4" *ngFor="let seed of seeds">
+            <seed-corn *ngIf="seed.type === 'corn'" [seedData]="seed"></seed-corn>
+            <seed-sunflower *ngIf="seed.type === 'sunflower'" [seedData]="seed"></seed-sunflower>
+            <seed-blueberry *ngIf="seed.type === 'blue'" [seedData]="seed"></seed-blueberry>
+
+            <div class="d-grid gap-2">
+                <button type="button" name="" id="" class="btn btn-danger" (click)="delSeed(seed.id)">
+                    Borrar
+                </button>
+            </div>
+
         </div>
     </div>
 </div>

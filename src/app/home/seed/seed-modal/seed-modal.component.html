@@ -1,10 +1,42 @@
-<ng-container *ngFor="let seed of seeds">
-    
-</ng-container>
+<div class="formulario">
+    <form (ngSubmit)="sendSeed()" [formGroup]="form">
+        <div class="mb-3">
+            <label for="" class="form-label">Tipo</label>
+            <select class="form-select form-select-lg" name="" id="" formControlName="type">
+                <option *ngFor="let item of seedOptions; index as i" [value]="item.type" [selected]="i === 1 ? 'selected' : ''">{{item.name}}</option>
+            </select>
+        </div>
 
-<button class="btn btn-success" (click)="sendSeed()">ENVIAR SEMILLA</button>
+    <div class="mb-3">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Nombre de la planta"
+            formControlName="name" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Descripción</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Descripción de la semilla (opcional)"
+            formControlName="description" />
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Foto</label>
+        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Link de imagen"
+            formControlName="photo" />
+    </div>
 
-<div class="container-fluid">
+    <div class="d-grid gap-2">
+        <button type="submit" name="" id="" class="btn btn-primary">
+            Enviar
+        </button>
+    </div>
+
+</form>
+
+</div>
+
+
+
+
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-3" *ngFor="let seed of seeds">
 
@@ -19,4 +51,4 @@
 
         </div>
     </div>
-</div>
+</div> -->

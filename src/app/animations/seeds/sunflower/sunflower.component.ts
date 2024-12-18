@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AnimationPotComponent } from '../../animation-pot/animation-pot.component';
 import { CommonModule } from '@angular/common';
 import { PipeComponent } from './pipe/pipe.component';
@@ -19,6 +19,8 @@ export class SunflowerComponent implements OnInit{
 
   public flowers: any = [];
   public pipes: any = [];
+
+  @Input() seedData: any;
 
   ngOnInit(): void {
     for (let index = 0; index < 8; index++) {

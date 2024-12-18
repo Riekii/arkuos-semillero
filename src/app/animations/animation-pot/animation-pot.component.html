@@ -12,6 +12,12 @@
 <div class="pot-container">
     <ng-content></ng-content>
     
-    <div class="pot-top"></div>
-    <div class="pot-base"></div>
+    <div class="pot-top">
+    </div>
+    <div class="pot-base">
+        <div class="data" *ngIf="seedData">
+            <p class="name" *ngIf="seedData">{{seedData.name}}</p>
+            <p class="desc">{{seedData.description}}</p>
+        </div>
+    </div>
 </div>

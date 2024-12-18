@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AnimationPotComponent } from '../../animation-pot/animation-pot.component';
 import { PopcornComponent } from './popcorn/popcorn.component';
 import { SharedService } from '../../../service/shared.service';
@@ -14,6 +14,8 @@ import { SharedService } from '../../../service/shared.service';
 export class CornComponent {
 
   popcorns: any = [];
+
+  @Input() seedData: any;
 
   constructor(
     public shared: SharedService
