@@ -33,6 +33,7 @@ export class SeedComponent {
     const dialogRef = this.dialog.open(SeedModalComponent, {
       height: '400px',
       width: '600px',
+      panelClass: 'seed-modal',
       data:{}
     });
 
