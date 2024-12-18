@@ -1,4 +1,4 @@
-import { Type } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import {
     MAT_DIALOG_DATA,
     MatDialog,
@@ -10,12 +10,24 @@ import {
 } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
-export const ImportsAngularMaterial: Type<any>[] = [
-    MatDialog,
-    MatDialogActions,
-    MatDialogClose,
-    MatDialogContent,
-    MatDialogRef,
-    MatDialogTitle,
-    MatFormFieldModule
-]
+// @NgModule({
+//     exports: [
+//         MatDialog,
+//         MatDialogActions,
+//         MatDialogClose,
+//         MatDialogContent,
+//         MatDialogRef,
+//         MatDialogTitle,
+//         MatFormFieldModule
+//     ],
+//     imports: [
+//         MatDialog,
+//         MatDialogActions,
+//         MatDialogClose,
+//         MatDialogContent,
+//         MatDialogRef,
+//         MatDialogTitle,
+//         MatFormFieldModule
+//     ],
+// })
+// export class ImportsAngularMaterial { }
