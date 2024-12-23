@@ -1,5 +1,4 @@
 .formulario {
-    padding: 15px;
     width: 100%;
 
     label {
@@ -10,4 +9,13 @@
         background: var(--green-dark);
         color: white;
     }
+}
+
+.modal-title {
+    background: var(--green-dark);
+    color: var(--white-mid);
+    border-radius: 5px;
+    padding: 0 10px ;
+
+    margin-bottom: 10px;
 }
