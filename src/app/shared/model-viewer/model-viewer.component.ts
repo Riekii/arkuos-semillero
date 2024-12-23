@@ -32,7 +32,7 @@ export class ModelViewerComponent {
 
     // Configurar la luz
     const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(1, 10, 1).normalize();
+    light.position.set(1, 1, 1).normalize();
     scene.add(light);
 
     // Posicionar la cámara
