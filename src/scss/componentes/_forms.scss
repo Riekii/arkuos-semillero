@@ -1,0 +1,17 @@
+textarea {
+    width: 100%;
+    border-radius: 5px;
+    min-height: 80px;
+    padding: 5px 10px;
+}
+
+input,
+label {
+    font-size: 1.3em;
+}
+
+select {
+    &:hover {
+        cursor: pointer;
+    }
+}

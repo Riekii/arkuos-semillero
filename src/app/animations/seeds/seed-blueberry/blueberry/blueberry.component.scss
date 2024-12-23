@@ -13,6 +13,14 @@
         rotate: 90deg;
     }
 
+    &:hover{
+        cursor: grab;
+    }
+
+    &:active{
+        cursor: grabbing;
+    }
+
     &.even {
         margin-left: -50px;
         display: flex;

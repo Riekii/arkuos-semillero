@@ -1,4 +1,21 @@
-.formulario{
-    padding: 15px;
+.formulario {
     width: 100%;
+
+    label {
+        color: white;
+    }
+
+    button.submit {
+        background: var(--green-dark);
+        color: white;
+    }
+}
+
+.modal-title {
+    background: var(--green-dark);
+    color: var(--white-mid);
+    border-radius: 5px;
+    padding: 0 10px ;
+
+    margin-bottom: 10px;
 }
