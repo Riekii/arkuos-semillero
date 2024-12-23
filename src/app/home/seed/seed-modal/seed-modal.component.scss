@@ -1,4 +1,13 @@
-.formulario{
+.formulario {
     padding: 15px;
     width: 100%;
+
+    label {
+        color: white;
+    }
+
+    button.submit {
+        background: var(--green-dark);
+        color: white;
+    }
 }

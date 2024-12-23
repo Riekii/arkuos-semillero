@@ -1,5 +1,15 @@
-.seed-modal{
+.seed-modal {
     // border: solid 20px brown;
     border-radius: 10px;
-    // border: solid white 4px;
+    height: 100vh !important;
+
+    mat-dialog-container{
+        padding: 0;
+        border-radius: 0px;
+
+        .mat-mdc-dialog-surface {
+            border-radius: 0;
+            background-color: var(--green-light);
+        }
+    }
 }

@@ -2,7 +2,7 @@
     <form (ngSubmit)="sendSeed()" [formGroup]="form">
         <div class="mb-3">
             <label for="" class="form-label">Tipo</label>
-            <select class="form-select form-select-lg" name="" id="" formControlName="type">
+            <select class="form-select" name="" id="" formControlName="type" placeholder="Selecciona un tipo">
                 <option *ngFor="let item of seedOptions; index as i" [value]="item.type" [selected]="i === 1 ? 'selected' : ''">{{item.name}}</option>
             </select>
         </div>
@@ -14,8 +14,10 @@
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Descripción</label>
-        <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Descripción de la semilla (opcional)"
-            formControlName="description" />
+        <!-- <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Descripción de la semilla (opcional)"
+            formControlName="description" /> -->
+            <textarea matInput class="textarea"
+            cdkTextareaAutosize formControlName="description" placeholder="Descripción de la semilla (opcional)" id=""></textarea>
     </div>
     <div class="mb-3">
         <label for="" class="form-label">Foto</label>
@@ -24,7 +26,7 @@
     </div>
 
     <div class="d-grid gap-2">
-        <button type="submit" name="" id="" class="btn btn-primary">
+        <button type="submit" name="" id="" class="btn submit">
             Enviar
         </button>
     </div>

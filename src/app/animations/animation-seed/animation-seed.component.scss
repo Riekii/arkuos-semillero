@@ -11,6 +11,7 @@
     overflow: hidden;
 
     opacity: 0.9;
+        top: 0;
 
     &.front {
         position: absolute;
@@ -23,7 +24,7 @@
 }
 
 // CONTENIDO QUE PUEDES INCLUIR DENTRO DEL FONDO ANIMADO (DETRAS DE LAS HOJAS)
-.content{
+.content {
     display: flex;
     position: absolute;
     flex-direction: column;

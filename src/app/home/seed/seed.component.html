@@ -9,11 +9,9 @@
             <seed-sunflower *ngIf="seed.type === 'sunflower'" [seedData]="seed"></seed-sunflower>
             <seed-blueberry *ngIf="seed.type === 'blue'" [seedData]="seed"></seed-blueberry>
 
-            <div class="d-grid gap-2">
-                <button type="button" name="" id="" class="btn btn-danger" (click)="delSeed(seed.id)">
-                    Borrar
+                <button type="button" name="" id="" class="btn btn-danger delSeed" (click)="delSeed(seed.id)">
+                    <i class="bi bi-trash"></i>
                 </button>
-            </div>
 
         </div>
     </div>

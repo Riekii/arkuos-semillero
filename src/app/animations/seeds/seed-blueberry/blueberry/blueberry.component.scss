@@ -11,6 +11,14 @@
         transition: 0.2s ease-in-out all;
     }
 
+    &:hover{
+        cursor: grab;
+    }
+
+    &:active{
+        cursor: grabbing;
+    }
+
     &.even {
         margin-left: -50px;
         display: flex;
