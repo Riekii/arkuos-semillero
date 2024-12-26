@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SeedModalComponent } from '../seed/seed-modal/seed-modal.component';
+import { SeedModalComponent } from '../seed/new-seed-modal/new-seed-modal.component';
 import { AnimationSeedComponent } from '../../animations/animation-seed/animation-seed.component';
 import { SeparadorComponent } from '../../shared/separador/separador.component';
 

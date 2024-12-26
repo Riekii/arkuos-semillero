@@ -8,28 +8,42 @@
     width: 100%;
 
     .pot-top {
-        background: rgb(119, 30, 30);
+        background: var(--brown-mid);
         width: 270px;
         height: 30px;
         border-radius: 5px;
         z-index: 100;
 
-        p.name {
-            width: 100%;
-            color: var(--white-light);
-            text-align: center;
-            font-size: 1.3em;
+        .detail {
+            width: 70%;
+            z-index: 300;
+            height: 30px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            color: white;
+        }
+
+        &:hover{
+            cursor: pointer;
+            background: var(--brown-light);;
         }
     }
 
     .pot-base {
         clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
-        background: brown;
+        background: var(--brown-dark);
         width: 250px;
         height: 150px;
 
+        margin-bottom: 15px;
+
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         border-radius: 25% / 0 0 100px 100px;
         z-index: 100;
@@ -38,17 +52,17 @@
             text-align: center;
             color: var(--white-mid);
 
-            &.name{
+            &.name {
                 font-size: 1.4em;
                 font-weight: bold;
             }
         }
 
-        .data{
+        .data {
             display: flex;
             width: 100%;
             padding-top: 5px;
-        
+
             flex-direction: column;
             justify-content: center;
         }
@@ -61,4 +75,6 @@
             opacity: 0.7;
         }
     }
+
+
 }

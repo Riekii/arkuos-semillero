@@ -20,7 +20,6 @@ export class CornComponent {
   constructor(
     public shared: SharedService
   ){
-
   }
 
   popcornStart(){

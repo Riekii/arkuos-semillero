@@ -1,0 +1,12 @@
+<ngx-dropzone *ngIf="fileUpdated && !type" [multiple]="false" class="dropzone" (change)="onSelect($event)"
+    style='background-image: url("{{imageBase64}}")'>
+    <ngx-dropzone-label></ngx-dropzone-label>
+</ngx-dropzone>
+
+<ngx-dropzone *ngIf="!fileUpdated || type" [multiple]="false" class="dropzone" (change)="onSelect($event)">
+    <ngx-dropzone-label *ngIf="!type">Arrastra aquí la imagen</ngx-dropzone-label>
+    <ngx-dropzone-label *ngIf="type === 1">Arrastra el archivo STL</ngx-dropzone-label>
+    <ngx-dropzone-preview *ngIf="fileUpdated" [removable]="true" (removed)="onRemove()">
+        <ngx-dropzone-label>{{ fileUpdated.name }}</ngx-dropzone-label>
+    </ngx-dropzone-preview>
+</ngx-dropzone>

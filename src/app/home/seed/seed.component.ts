@@ -1,9 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CornComponent } from '../../animations/seeds/corn/corn.component';
 import { SunflowerComponent } from '../../animations/seeds/sunflower/sunflower.component';
-import { AnimationPotComponent } from '../../animations/animation-pot/animation-pot.component';
 import { SeedBlueberryComponent } from '../../animations/seeds/seed-blueberry/seed-blueberry.component';
-import { SeedModalComponent } from './seed-modal/seed-modal.component';
+import { SeedModalComponent } from './new-seed-modal/new-seed-modal.component';
 
 import {
   MAT_DIALOG_DATA,
@@ -17,12 +16,13 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FirebaseService } from '../../service/firebase.service';
 import { CommonModule } from '@angular/common';
+import { seedImports } from '../../shared/seedsImports';
 
 
 @Component({
   selector: 'seed-container',
   standalone: true,
-  imports: [CornComponent, CommonModule, SunflowerComponent, AnimationPotComponent, SeedBlueberryComponent, MatFormFieldModule],
+  imports: [CommonModule, MatFormFieldModule, ...seedImports],
   templateUrl: './seed.component.html',
   styleUrl: './seed.component.scss'
 })
@@ -63,7 +63,6 @@ export class SeedComponent implements OnInit{
       height: '450px',
       width: '400px',
       panelClass: 'seed-modal',
-      data:{}
     });
 
     dialogRef.afterClosed().subscribe(result => {

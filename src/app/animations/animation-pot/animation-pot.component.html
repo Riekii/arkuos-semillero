@@ -11,13 +11,18 @@
 
 <div class="pot-container">
     <ng-content></ng-content>
-    
+
     <div class="pot-top">
+        <div class="detail" (click)="openDetailSeed()">
+            <i class="bi bi-eye-fill"></i> <span>Ver detalles</span>
+        </div>
     </div>
     <div class="pot-base">
         <div class="data" *ngIf="seedData">
             <p class="name" *ngIf="seedData">{{seedData.name}}</p>
             <p class="desc">{{seedData.description}}</p>
+
+
         </div>
     </div>
 </div>

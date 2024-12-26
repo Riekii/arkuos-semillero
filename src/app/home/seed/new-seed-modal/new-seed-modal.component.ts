@@ -8,24 +8,36 @@ import {MatInputModule} from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { DropzoneComponent } from '../../../shared/dropzone/dropzone.component';
+import { StorageService } from '../../../service/storage.service';
 
 @Component({
-  selector: 'app-seed-modal',
+  selector: 'app-new-seed-modal',
   standalone: true,
   imports: [AsyncPipe, CommonModule,
     MatRadioModule,
+    DropzoneComponent,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
     FormsModule,
     MatIconModule],
-  templateUrl: './seed-modal.component.html',
-  styleUrl: './seed-modal.component.scss'
+  templateUrl: './new-seed-modal.component.html',
+  styleUrl: './new-seed-modal.component.scss'
 })
 export class SeedModalComponent implements OnInit {
 
   fire = inject(FirebaseService);
+  
+  public imgType!: string;
+  public blob!: Blob;
+  public stl!: File;
+
+  constructor(
+    public store: StorageService
+  ){
+  }
 
   public seeds!: any[];
   public seedOptions = [
@@ -39,6 +51,7 @@ export class SeedModalComponent implements OnInit {
     name: new FormControl("", Validators.minLength(2)),
     description: new FormControl(""),
     photo: new FormControl(""),
+    model: new FormControl(""),
     type: new FormControl("") 
   });
 
@@ -56,10 +69,44 @@ export class SeedModalComponent implements OnInit {
   }
 
   sendSeed(){
-    this.fire.addSemilla(this.form.value);
+    this.fire.addSemilla(this.form.value).then((resp: any) => {
+      let id = resp._key.path.segments[1];
+      // SI TIENE IMAGEN
+      if(this.form.get('photo')?.value != ""){
+        this.store.addStoreSeedImage(
+          {
+            id: id,
+            blob: this.blob
+          }
+        )
+      }
+      // SI TIENE MODELO
+      console.log(this.stl)
+      if(this.stl){
+        this.store.addStoreSeedModel(
+          {
+            id: id,
+            file: this.stl
+          }
+        )
+      }
+    })
   }
 
   delSeed(seedId: string){
     this.fire.delSeed(seedId)
+  }
+
+  setImage(event: any, type?: number){
+    if(!type){
+      this.form?.get('photo')?.setValue(event.b64);
+      this.imgType = event.type;
+      this.blob = event.blob;
+    }
+    // SI ES UN ARCHIVO 3D
+    else if(type === 1){
+      this.stl = event.file;
+    }
+
   }
 }

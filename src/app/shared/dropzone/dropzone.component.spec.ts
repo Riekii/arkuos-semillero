@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeedModalComponent } from './seed-modal.component';
+import { DropzoneComponent } from './dropzone.component';
 
-describe('SeedModalComponent', () => {
-  let component: SeedModalComponent;
-  let fixture: ComponentFixture<SeedModalComponent>;
+describe('DropzoneComponent', () => {
+  let component: DropzoneComponent;
+  let fixture: ComponentFixture<DropzoneComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SeedModalComponent]
+      imports: [DropzoneComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SeedModalComponent);
+    fixture = TestBed.createComponent(DropzoneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

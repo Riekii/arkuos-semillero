@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailSeedModalComponent } from '../../home/seed/detail-seed-modal/detail-seed-modal.component';
 
 @Component({
   selector: 'pot',
@@ -11,5 +13,22 @@ import { Component, Input } from '@angular/core';
 export class AnimationPotComponent {
 
   @Input() seedData: any;
+  
+  public dialog = inject(MatDialog);
 
+  openDetailSeed(){
+    console.log(this.seedData)
+    const dialogRef = this.dialog.open(DetailSeedModalComponent, {
+      height: '450px',
+      width: '400px',
+      panelClass: 'seed-modal-detail',
+      data: {
+        seed: this.seedData
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+    }); 
+  }
 }

@@ -1,0 +1,10 @@
+.dropzone{
+    border-color: var(--green-light) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    .preview{
+        opacity: 0.7;
+    }
+}

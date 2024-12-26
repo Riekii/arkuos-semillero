@@ -4,6 +4,13 @@
 
 .delSeed{
     width: fit-content;
+    height: fit-content;
     font-size: 1.6em;
-    margin-top: -70px;
+    // margin: 0 auto;
+    z-index: 300;
+    margin-top: -68px;
+}
+
+.seedMargin{
+    margin-bottom: 15px;
 }
