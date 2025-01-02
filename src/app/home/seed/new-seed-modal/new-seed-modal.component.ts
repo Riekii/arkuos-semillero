@@ -69,6 +69,8 @@ export class SeedModalComponent implements OnInit {
   }
 
   sendSeed(){
+    if(this.stl) this.form.get('model')?.setValue(1);
+    else this.form.get('model')?.setValue(0);
     this.fire.addSemilla(this.form.value).then((resp: any) => {
       let id = resp._key.path.segments[1];
       // SI TIENE IMAGEN
@@ -81,7 +83,6 @@ export class SeedModalComponent implements OnInit {
         )
       }
       // SI TIENE MODELO
-      console.log(this.stl)
       if(this.stl){
         this.store.addStoreSeedModel(
           {

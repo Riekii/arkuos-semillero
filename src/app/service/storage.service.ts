@@ -28,13 +28,7 @@ export class StorageService {
   }
   // DESCARGAR MODELO
   getStoreSeedModel(id:string){
-    getDownloadURL(ref(this.store, 'slt/' + id))
-      .then((url) => {
-        console.log(url)
-      })
-      .catch((error) => {
-        // Handle any errors
-      });
+    return getDownloadURL(ref(this.store, 'stl/' + id));
   }
 
 }

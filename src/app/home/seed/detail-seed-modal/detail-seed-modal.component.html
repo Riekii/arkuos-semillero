@@ -1,10 +1,18 @@
 <div class="container-fluid" *ngIf="seed">
     <div class="row">
-        <div class="col col-lg-4">
-            {{seed.name}}
+        <div class="col col-lg-12">
+            <h2 class="modal-title">
+                {{seed.name}}
+            </h2>
+            <h4>
+                {{seed.description}}
+            </h4>
             <img [src]="imageLink" alt="">
-            <a [href]="imageLink" target="_blank">asdfdsa</a>
         </div>
-        <div class="col col-lg-4">2</div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-model-viewer *ngIf="model" [model]="model"></app-model-viewer>
+        </div>
     </div>
 </div>

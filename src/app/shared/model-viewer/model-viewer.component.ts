@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges } from '@angular/core';
 import { STLLoader } from 'three-stdlib';
 import * as THREE from 'three'
 
@@ -9,14 +9,21 @@ import * as THREE from 'three'
   templateUrl: './model-viewer.component.html',
   styleUrl: './model-viewer.component.scss'
 })
-export class ModelViewerComponent {
+export class ModelViewerComponent implements OnChanges {
 
-  constructor(private el: ElementRef) {}
+  @Input('model') modelLink: any = 'assets/3d/sunflower.stl';
 
-  ngOnInit(): void {}
+
+  constructor(private el: ElementRef) { }
+
+  ngOnInit(): void { }
 
   ngAfterViewInit(): void {
     this.initThreeJS();
+  }
+
+  ngOnChanges(): void {
+
   }
 
   private initThreeJS() {
@@ -41,7 +48,10 @@ export class ModelViewerComponent {
 
     // Cargar el modelo STL
     const loader = new STLLoader();
-    loader.load('assets/3d/sunflower.stl', (geometry) => {
+    loader.setCrossOrigin("no-cors");
+    this.modelLink = this.modelLink;
+    console.warn('MODELO: ', this.modelLink)
+    loader.load(this.modelLink, (geometry) => {
       const material = new THREE.MeshStandardMaterial({ color: 0x0055ff });
       const mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
@@ -54,6 +64,11 @@ export class ModelViewerComponent {
         renderer.render(scene, camera);
       }
       animate();
-    });
+    },
+      (progress: any) => { },
+      (error: any) => {
+        console.log('error: ', error)
+      },
+    );
   }
 }
