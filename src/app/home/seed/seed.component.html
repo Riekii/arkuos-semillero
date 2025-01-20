@@ -5,9 +5,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-xl-4" *ngFor="let seed of seeds">
-            <seed-corn *ngIf="seed.type === 'corn'" [seedData]="seed"></seed-corn>
+            <!-- <seed-corn *ngIf="seed.type === 'corn'" [seedData]="seed"></seed-corn>
             <seed-sunflower *ngIf="seed.type === 'sunflower'" [seedData]="seed"></seed-sunflower>
             <seed-blueberry *ngIf="seed.type === 'blue'" [seedData]="seed"></seed-blueberry>
+            <seed-rose *ngIf="seed.type === 'rose'" [seedData]="seed"></seed-rose> 
+            <seed-dragon *ngIf="seed.type === 'dragon'" [seedData]="seed"></seed-dragon>    
+            <seed-strawberry *ngIf="seed.type === 'strawberry'" [seedData]="seed"></seed-strawberry>     -->
+
+            <seed-generic [seedData]="seed"></seed-generic>
 
             <div class="d-grid gap-2">
                 <button type="button" name="" id="" class="btn btn-danger delSeed" (click)="delSeed(seed.id)">

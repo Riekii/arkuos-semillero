@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FirebaseService } from '../../service/firebase.service';
 import { CommonModule } from '@angular/common';
 import { seedImports } from '../../shared/seedsImports';
+import { StrawberryComponent } from "../../animations/seeds/strawberry/strawberry.component";
 
 
 @Component({

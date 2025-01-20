@@ -1,0 +1,38 @@
+.dragon-container{
+    background: rgb(0,135,8);
+    background: linear-gradient(-212deg, rgba(0,135,8,1) 0%, rgba(246,60,136,1) 32%);
+    
+    width: 250px;
+    height: 250px;
+
+    rotate: 45deg;
+    margin-bottom: -100px;
+
+    border-radius: 80px 200px 100px 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+
+    border: solid 2px green;
+
+    .row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        // border: red solid;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .spike{
+        border-left: solid green 6px;
+        border-top: solid green 6px;
+
+        height: 30px;
+        width: 0px;
+    }
+}

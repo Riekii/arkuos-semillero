@@ -1,0 +1,37 @@
+.strawberry {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    rotate: 45deg;
+    background-color: red;
+    border-radius: 250px 180px 90px 180px;
+    margin-bottom: -30px;
+  }
+  .strawberry::before {
+    content: "";
+    position: absolute;
+    // top: -60px;
+    left: 10%;
+    top: -22%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 80px;
+    rotate: -45deg;
+    background-color: green;
+    border-radius: 50%;
+    clip-path: polygon(16% 28%, 31% 6%, 50% 29%, 74% 6%, 85% 36%, 100% 7%, 90% 70%, 52% 65%, 15% 70%, 0 12%);
+  }
+  .strawberry::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    opacity: 0.2;
+    z-index: 1000;
+    pointer-events: none;
+  }
