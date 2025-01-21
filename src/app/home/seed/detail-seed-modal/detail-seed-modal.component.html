@@ -4,11 +4,22 @@
             <h2 class="modal-title">
                 {{seed.name}}
             </h2>
-            <h4>
-                {{seed.description}}
-            </h4>
-            <img [src]="imageLink" alt="">
         </div>
+        <div class="col-12 col-lg-6">
+            <div class="pot-container">
+                <img [src]="imageLink" class="fotoPlanta" alt="">
+                <div class="pot-top">
+                </div>
+                <div class="pot-base">
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h5 class="description-container">
+                {{seed.description}}
+            </h5>
+        </div>
+
     </div>
     <div class="row">
         <div class="col">

@@ -16,14 +16,13 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FirebaseService } from '../../service/firebase.service';
 import { CommonModule } from '@angular/common';
-import { seedImports } from '../../shared/seedsImports';
-import { StrawberryComponent } from "../../animations/seeds/strawberry/strawberry.component";
+import { SeedGenericComponent } from '../../animations/seeds/generic/generic.component';
 
 
 @Component({
   selector: 'seed-container',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, ...seedImports],
+  imports: [CommonModule, MatFormFieldModule, SeedGenericComponent],
   templateUrl: './seed.component.html',
   styleUrl: './seed.component.scss'
 })

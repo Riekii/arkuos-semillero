@@ -23,7 +23,7 @@ import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-mo
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    FormsModule,
+    FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,
     MatIconModule],
   templateUrl: './new-seed-modal.component.html',
   styleUrl: './new-seed-modal.component.scss'
@@ -76,6 +76,7 @@ export class SeedModalComponent implements OnInit {
     else this.form.get('model')?.setValue(0);
     this.fire.addSemilla(this.form.value).then((resp: any) => {
       let id = resp._key.path.segments[1];
+      this.dialog.closeAll();
       // SI TIENE IMAGEN
       if(this.form.get('photo')?.value != ""){
         this.store.addStoreSeedImage(

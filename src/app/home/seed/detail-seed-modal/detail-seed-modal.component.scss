@@ -1,0 +1,17 @@
+.fotoPlanta {
+    width: 300px;
+    height: auto;
+}
+
+.description-container{
+    .title{
+        font-size: 1.1em;
+    }
+    background: var(--green-dark);
+    color: var(--white-mid);
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-weight: 100;
+    height: 500px;
+}
