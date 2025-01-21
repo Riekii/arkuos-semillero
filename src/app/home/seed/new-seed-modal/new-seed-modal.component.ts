@@ -10,6 +10,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { DropzoneComponent } from '../../../shared/dropzone/dropzone.component';
 import { StorageService } from '../../../service/storage.service';
+import { MatDialog } from '@angular/material/dialog';
+import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-modal.component';
 
 @Component({
   selector: 'app-new-seed-modal',
@@ -29,6 +31,7 @@ import { StorageService } from '../../../service/storage.service';
 export class SeedModalComponent implements OnInit {
 
   fire = inject(FirebaseService);
+  public dialog = inject(MatDialog);
   
   public imgType!: string;
   public blob!: Blob;
@@ -108,6 +111,16 @@ export class SeedModalComponent implements OnInit {
     else if(type === 1){
       this.stl = event.file;
     }
+  }
 
+  openEffects(): void {
+    const dialogRef = this.dialog.open(EffectsSeedModalComponent, {
+      height: '450px',
+      width: '400px',
+      panelClass: 'seed-modal',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

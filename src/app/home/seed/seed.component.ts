@@ -28,7 +28,7 @@ import { StrawberryComponent } from "../../animations/seeds/strawberry/strawberr
   styleUrl: './seed.component.scss'
 })
 
-export class SeedComponent implements OnInit{
+export class SeedComponent implements OnInit {
 
   public dialog = inject(MatDialog);
 
@@ -46,7 +46,7 @@ export class SeedComponent implements OnInit{
     })
   }
 
-  sendSeed(){
+  sendSeed() {
     let semilla = {
       nombre: 'pepito',
       foto: 'https://blog.agroptima.com/wp-content/uploads/2015/11/semilla-certificada-o-no.jpg',
@@ -55,7 +55,7 @@ export class SeedComponent implements OnInit{
     this.fire.addSemilla(semilla);
   }
 
-  delSeed(seedId: string){
+  delSeed(seedId: string) {
     this.fire.delSeed(seedId)
   }
 
@@ -67,7 +67,6 @@ export class SeedComponent implements OnInit{
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      
-    }); 
+    });
   }
 }

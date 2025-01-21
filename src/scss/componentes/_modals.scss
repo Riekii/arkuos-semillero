@@ -3,6 +3,10 @@
     border-radius: 10px;
     height: 100vh !important;
 
+    &.effects{
+        // opacity: 0.3;
+    }
+
     mat-dialog-container{
         padding: 0;
         border-radius: 0px;

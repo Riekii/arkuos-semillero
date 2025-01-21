@@ -3,13 +3,13 @@
 </h2>
 <div class="formulario">
     <form (ngSubmit)="sendSeed()" [formGroup]="form">
-        <div class="mb-3">
-            <label for="" class="form-label">Tipo</label>
+        <!-- <div class="mb-3">
+            <label for="" class="form-label">Efecto</label>
             <select class="form-select" name="" id="" formControlName="type" placeholder="Selecciona un tipo">
                 <option *ngFor="let item of seedOptions; index as i" [value]="item.type"
                     [selected]="i === 1 ? 'selected' : ''">{{item.name}}</option>
             </select>
-        </div>
+        </div> -->
 
         <div class="mb-3">
             <label for="" class="form-label">Nombre</label>
@@ -30,6 +30,12 @@
         <div class="d-grid gap-2 mb-3">
             <label for="" class="form-label">Modelo 3d</label>
             <dropzone [type]="1" (imageEmitter)="setImage($event, 1)"></dropzone>
+        </div>
+
+        <div class="d-grid gap-2">
+            <button type="button" name="" id="" (click)="openEffects()" class="btn submit">
+                Efecto
+            </button>
         </div>
 
         <div class="d-grid gap-2">
