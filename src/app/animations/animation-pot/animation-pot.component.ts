@@ -17,7 +17,6 @@ export class AnimationPotComponent {
   public dialog = inject(MatDialog);
 
   openDetailSeed(){
-    console.log(this.seedData)
     const dialogRef = this.dialog.open(DetailSeedModalComponent, {
       height: '450px',
       width: '400px',
