@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { environment } from '../environments/environment';
@@ -15,6 +15,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideRouter(routes, withHashLocation()),
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes),
     { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
