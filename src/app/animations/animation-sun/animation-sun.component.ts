@@ -20,9 +20,7 @@ export class AnimationSunComponent {
     const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (currentScrollTop < this.lastScrollTop) {
-    console.log('Scroll hacia a´rriba');
   } else if (currentScrollTop > this.lastScrollTop) {
-    console.log('Scroll hacia abajo');
   }
   
   if(currentScrollTop < 400) this.sunActive = true;

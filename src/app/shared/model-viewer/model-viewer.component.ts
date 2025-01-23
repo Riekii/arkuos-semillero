@@ -67,7 +67,6 @@ export class ModelViewerComponent implements OnChanges {
     },
       (progress: any) => { },
       (error: any) => {
-        console.log('error: ', error)
       },
     );
   }
