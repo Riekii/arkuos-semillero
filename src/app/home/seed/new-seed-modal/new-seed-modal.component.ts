@@ -72,6 +72,7 @@ export class NewSeedModalComponent implements OnInit {
 
   createEditForm(){
     this.form.patchValue(this.seed);
+    this.form.get('photo')?.setValue('');
   }
 
   sendSeed(){
