@@ -1,5 +1,6 @@
 <h2 class="modal-title">
-    Nueva planta
+    <p *ngIf="!edit">Nueva planta</p>
+    <p *ngIf="edit">Editar planta</p>
 </h2>
 <div class="formulario">
     <form (ngSubmit)="sendSeed()" [formGroup]="form">

@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { FirebaseApp } from '@angular/fire/app';
-import { ref, Storage, uploadBytes, uploadBytesResumable, getStorage, getDownloadURL } from '@angular/fire/storage';
+import { refFromURL } from '@angular/fire/database';
+import { ref, Storage, uploadBytes, uploadBytesResumable, getStorage, getDownloadURL, deleteObject } from '@angular/fire/storage';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,6 @@ export class StorageService {
     const storageRef = ref(this.store, 'images/'+file.id)
     uploadBytes(storageRef, file.blob);
   }
-
   // AÑADIR MODELO
   addStoreSeedModel(file: any) {
     const storageRef = ref(this.store, 'stl/' + file.id);
@@ -29,6 +29,15 @@ export class StorageService {
   // DESCARGAR MODELO
   getStoreSeedModel(id:string){
     return getDownloadURL(ref(this.store, 'stl/' + id));
+  }
+
+  // BORRAR MODELO
+  delStoreSeedModel(id: string) {
+    return deleteObject(ref(this.store, 'stl/' + id))
+  }
+  // BORRAR IMAGEN
+  delStoreSeedImage(id: string) {
+    return deleteObject(ref(this.store, 'images/' + id))
   }
 
 }

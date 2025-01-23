@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CornComponent } from '../../animations/seeds/corn/corn.component';
 import { SunflowerComponent } from '../../animations/seeds/sunflower/sunflower.component';
 import { SeedBlueberryComponent } from '../../animations/seeds/seed-blueberry/seed-blueberry.component';
-import { SeedModalComponent } from './new-seed-modal/new-seed-modal.component';
+import { NewSeedModalComponent } from './new-seed-modal/new-seed-modal.component';
 
 import {
   MAT_DIALOG_DATA,
@@ -44,22 +44,14 @@ export class SeedComponent implements OnInit {
       this.seeds = resp;
     })
   }
-
-  sendSeed() {
-    let semilla = {
-      nombre: 'pepito',
-      foto: 'https://blog.agroptima.com/wp-content/uploads/2015/11/semilla-certificada-o-no.jpg',
-      descripcion: 'Un popito es un animal salvaje muy peligroso'
-    }
-    this.fire.addSemilla(semilla);
-  }
+  
 
   delSeed(seedId: string) {
     this.fire.delSeed(seedId)
   }
 
   openSeed(): void {
-    const dialogRef = this.dialog.open(SeedModalComponent, {
+    const dialogRef = this.dialog.open(NewSeedModalComponent, {
       height: '450px',
       width: '400px',
       panelClass: 'seed-modal',

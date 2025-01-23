@@ -5,6 +5,8 @@ import { environment } from '../../../../environments/environment';
 import { StorageService } from '../../../service/storage.service';
 import { ModelViewerComponent } from '../../../shared/model-viewer/model-viewer.component';
 import { AnimationPotComponent } from '../../../animations/animation-pot/animation-pot.component';
+import { FirebaseService } from '../../../service/firebase.service';
+import { NewSeedModalComponent } from '../new-seed-modal/new-seed-modal.component';
 
 @Component({
   selector: 'app-detail-seed-modal',
@@ -20,10 +22,12 @@ export class DetailSeedModalComponent implements OnInit{
   public model: any; 
     
   // private seedsComponents = @Inject(...)
+  public dialog = inject(MatDialog);
   
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public store: StorageService
+    public store: StorageService,
+    private fire: FirebaseService
   ) { }
 
   ngOnInit(): void {
@@ -40,5 +44,22 @@ export class DetailSeedModalComponent implements OnInit{
         console.error(error)
         // Handle any errors
       });
+  }
+
+  delSeed() {
+    this.fire.delSeed(this.seed.id);
+    this.store.delStoreSeedImage(this.seed.id);
+    this.store.delStoreSeedModel(this.seed.id);
+    this.dialog.closeAll();
+  }
+
+  editSeed(){
+    this.dialog.open(NewSeedModalComponent, {
+      panelClass: 'seed-modal',
+      data: {
+        seed: this.seed,
+        edit: true
+      }
+    })
   }
 }

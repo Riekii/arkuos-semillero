@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class FirebaseService {
 
   public fire = inject(Firestore);
+  // publi
 
   public colSeeds = collection(this.fire, 'semillas');
   public seeds$!: Observable<any[]>;
@@ -17,7 +18,7 @@ export class FirebaseService {
   // SEMILLAS
   // ======================================================================
   // AÑADIR NUEVA SEMILLA
-  public addSemilla(semilla: any) {
+  public addSeed(semilla: any) {
     return addDoc(this.colSeeds, semilla);
   }
   // RECOGER LISTADO DE SEMILLAS 
@@ -27,7 +28,7 @@ export class FirebaseService {
   }
   // EDITAR UNA SEMILLA
   public editSeed(reference: string, semilla: any) {
-    updateDoc(doc(this.fire, "semillas", reference), semilla);
+    return updateDoc(doc(this.fire, "semillas", reference), semilla);
   }
   // QUITAR UNA SEMILLA
   public delSeed(reference: any) {

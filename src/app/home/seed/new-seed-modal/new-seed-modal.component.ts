@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, Inject, OnInit, inject } from '@angular/core';
 import { FirebaseService } from '../../../service/firebase.service';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Observable, timeout } from 'rxjs';
@@ -10,7 +10,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { DropzoneComponent } from '../../../shared/dropzone/dropzone.component';
 import { StorageService } from '../../../service/storage.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-modal.component';
 
 @Component({
@@ -28,7 +28,7 @@ import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-mo
   templateUrl: './new-seed-modal.component.html',
   styleUrl: './new-seed-modal.component.scss'
 })
-export class SeedModalComponent implements OnInit {
+export class NewSeedModalComponent implements OnInit {
 
   fire = inject(FirebaseService);
   public dialog = inject(MatDialog);
@@ -37,8 +37,12 @@ export class SeedModalComponent implements OnInit {
   public blob!: Blob;
   public stl!: File;
 
+  public seed: any;
+  public edit: boolean = false;
+
   constructor(
-    public store: StorageService
+    public store: StorageService,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ){
   }
 
@@ -59,43 +63,72 @@ export class SeedModalComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.getSeeds();
+    this.seed = this.data.seed;
+    this.edit = this.data.edit || false;
+    if(this.edit){
+      this.createEditForm();
+    }
   }
 
-  createForm(){
-  }
-
-  getSeeds() {
-    this.fire.getSeeds().subscribe((resp: any) => {
-      this.seeds = resp;
-    })
+  createEditForm(){
+    this.form.patchValue(this.seed);
   }
 
   sendSeed(){
     if(this.stl) this.form.get('model')?.setValue(1);
     else this.form.get('model')?.setValue(0);
-    this.fire.addSemilla(this.form.value).then((resp: any) => {
-      let id = resp._key.path.segments[1];
-      this.dialog.closeAll();
-      // SI TIENE IMAGEN
-      if(this.form.get('photo')?.value != ""){
-        this.store.addStoreSeedImage(
-          {
-            id: id,
-            blob: this.blob
-          }
-        )
-      }
-      // SI TIENE MODELO
-      if(this.stl){
-        this.store.addStoreSeedModel(
-          {
-            id: id,
-            file: this.stl
-          }
-        )
-      }
-    })
+
+    if(this.edit){
+      this.fire.editSeed(this.seed.id, this.form.value).then((resp: any) => {
+        let id = this.seed.id;
+        this.dialog.closeAll();
+        // SI TIENE IMAGEN
+        if (this.form.get('photo')?.value != "") {
+          this.store.delStoreSeedImage(id);
+          this.store.addStoreSeedImage(
+            {
+              id: id,
+              blob: this.blob
+            }
+          )
+        }
+        // SI TIENE MODELO
+        if (this.stl) {
+          this.store.delStoreSeedModel(id);
+          this.store.addStoreSeedModel(
+            {
+              id: id,
+              file: this.stl
+            }
+          )
+        }
+      })
+    }
+    else{
+      this.fire.addSeed(this.form.value).then((resp: any) => {
+        let id = resp._key.path.segments[1];
+        this.dialog.closeAll();
+        // SI TIENE IMAGEN
+        if (this.form.get('photo')?.value != "") {
+          this.store.addStoreSeedImage(
+            {
+              id: id,
+              blob: this.blob
+            }
+          )
+        }
+        // SI TIENE MODELO
+        if (this.stl) {
+          this.store.addStoreSeedModel(
+            {
+              id: id,
+              file: this.stl
+            }
+          )
+        }
+      })
+    }
+    
   }
 
   delSeed(seedId: string){

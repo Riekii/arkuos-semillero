@@ -1,28 +1,57 @@
-button{
+button {
     border-radius: 5px;
     background: white;
     color: black;
     border: 1px solid black;
 
-    &.btn-dirt{
+    &.btn-dirt {
         background: none;
         background-image: url('../../assets/textures/dirt-background.webp');
         border-color: var(--brown-mid);
         font-size: 1.4em;
         background-size: 50px;
-        &:hover{
+
+        &:hover {
             border-color: var(--brown-mid);
             background: var(--brown-light);
         }
 
-        &:active{
+        &:active {
             background: var(--brown-dark)
         }
     }
+
+    &.icon {
+        background: none;
+        border: none !important;
+        font-size: 0.9em;
+        &.edit {
+            // background-color: var(--orange-light);
+            color: var(--orange-light);
+
+            &:active {
+                border-color: none;
+            }
+        }
+
+        &.del {
+            color: red;
+        }
+    }
+
+
 
     // &.tiny{
     //     display: flex;
     //     flex-direction: row;
     //     justify-content: center;
     // }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }

@@ -3,16 +3,24 @@
         <div class="col col-lg-12">
             <h2 class="modal-title">
                 {{seed.name}}
+                <div class="buttons">
+                    <button class="icon edit" (click)="editSeed()"><i class="bi bi-pencil"></i></button>
+                    <button class="icon del" (click)="delSeed()"><i class="bi bi-trash"></i></button>
+                </div>
+
             </h2>
         </div>
-        <div class="col-12 col-lg-6 pot-container-div">
-            <div class="pot-container">
-                <img [src]="imageLink" class="fotoPlanta" alt="">
-                <div class="pot-top">
-                </div>
-                <div class="pot-base">
+        <div class="col-12 col-lg-6 ">
+            <div class="pot-container-div">
+                <div class="pot-container">
+                    <img [src]="imageLink" class="fotoPlanta" alt="">
+                    <div class="pot-top">
+                    </div>
+                    <div class="pot-base">
+                    </div>
                 </div>
             </div>
+
         </div>
         <div class="col-12 col-lg-6">
             <h5 class="description-container">
