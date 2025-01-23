@@ -25,17 +25,23 @@ button {
         background: none;
         border: none !important;
         font-size: 0.9em;
+
         &.edit {
             // background-color: var(--orange-light);
             color: var(--orange-light);
 
-            &:active {
-                border-color: none;
+
+            &:hover {
+                background: var(--orange-dark);
             }
         }
 
         &.del {
             color: red;
+
+            &:hover {
+                background: rgb(80, 0, 0);
+            }
         }
     }
 
