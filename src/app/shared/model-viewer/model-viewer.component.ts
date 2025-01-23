@@ -50,7 +50,6 @@ export class ModelViewerComponent implements OnChanges {
     const loader = new STLLoader();
     loader.setCrossOrigin("no-cors");
     this.modelLink = this.modelLink;
-    console.warn('MODELO: ', this.modelLink)
     loader.load(this.modelLink, (geometry) => {
       const material = new THREE.MeshStandardMaterial({ color: 0x0055ff });
       const mesh = new THREE.Mesh(geometry, material);
