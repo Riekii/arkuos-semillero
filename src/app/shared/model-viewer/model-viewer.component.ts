@@ -51,7 +51,7 @@ export class ModelViewerComponent implements OnChanges {
     loader.setCrossOrigin("no-cors");
     this.modelLink = this.modelLink;
     loader.load(this.modelLink, (geometry) => {
-      const material = new THREE.MeshStandardMaterial({ color: 0x0055ff });
+      const material = new THREE.MeshStandardMaterial({ color: 0x0055ff }); 
       const mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
 
