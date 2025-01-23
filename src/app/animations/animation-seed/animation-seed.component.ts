@@ -12,9 +12,15 @@ import { AnimationSunComponent } from '../animation-sun/animation-sun.component'
 })
 export class AnimationSeedComponent implements OnInit{
 
-  public seedsNumber: any = [1,1,1,1,1,1,1,1]
+  public seedsNumber: any;
 
   ngOnInit(): void {
+    if(window.innerWidth <= 600){
+      this.seedsNumber = [1, 1, 1]
+    }
+    else{
+      this.seedsNumber = [1, 1, 1, 1, 1, 1, 1, 1];
+    }
   }
 
 }

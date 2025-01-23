@@ -12,7 +12,7 @@ import { SharedService } from '../../../service/shared.service';
 })
 export class AnimationSeedIndComponent implements OnInit {
   public minHeight: number = 300;
-  public maxHeight: number = 800;
+  public maxHeight: number = 600;
 
   public height: string = '0px';
   public width: string = '0px';

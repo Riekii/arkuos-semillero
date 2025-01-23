@@ -1,0 +1,53 @@
+O - Maiz
+X - Pino (Pinus Pinaster)
+X - castanea sativa (castaño)
+X - cerezo (Prinus avium)
+X - Nogal (Juglans regia)
+X - Abeto douglas
+X - Pino radiata (?)
+X - Blanco ; Albarin Btance
+X - Negro i verdejo
+X - Auellano (corylus avellana)
+X - Arándano (vaccium spp.)
+X - Judías (Phaseolas Spp.) Faba de Granja (Muchos hpos)
+X - Alverja ( Vicia entea)
+X - Cebolla morada (ceba vermella d'Andratx)
+X - Almendro (Prunus dulcis)
+X - Panizo (Setaria italica)
+X - Caña de azuicar (Saccharum officinarum)
+X - Parizo de
+X - des Dainiel (Pennisetum Gaticum)
+O - Pera / Peral (Pyris communis)
+X - Malas Manzano (Malus domestica)
+X - Roble
+X - Salgar / salguera
+X - Chopú
+X - Plaganu
+X - Manzanilla nomana
+X - Margarita / caléndula
+X - Cardu
+X - Garbanzu
+X - Guindo
+X - Espino
+X - Felechu
+X - Rosal
+X - Cirigüeña
+X - Apio
+X - Romeral
+X - Artu
+X - Amoz
+X - Camascu
+X - Acelga
+X - Remolacha
+X - Abedul
+X - Abedue
+X - calabaza
+X - claveles
+X - Malva
+X - Trébol
+X - ortiga
+X - Eucalipto
+X - Fresa
+X - Fresno
+X - Mora
+O - Tulipán

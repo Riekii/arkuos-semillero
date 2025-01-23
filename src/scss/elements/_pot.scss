@@ -7,6 +7,7 @@
     width: fit-content;
     width: 100%;
 
+    filter: drop-shadow(5px 5px #2424247e);
     .pot-top {
         background: var(--brown-mid);
         width: 270px;
@@ -30,7 +31,6 @@
         &:hover {
             cursor: pointer;
             background: var(--brown-light);
-            ;
         }
     }
 

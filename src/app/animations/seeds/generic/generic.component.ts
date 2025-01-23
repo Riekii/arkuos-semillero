@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AnimationPotComponent } from '../../animation-pot/animation-pot.component';
 import { environment } from '../../../../environments/environment';
 import { CommonModule } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'seed-generic',
   standalone: true,
-  imports: [AnimationPotComponent, CommonModule],
+  imports: [AnimationPotComponent, CommonModule, NgOptimizedImage],
   templateUrl: './generic.component.html',
   styleUrl: './generic.component.scss'
 })
