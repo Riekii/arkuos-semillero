@@ -3,7 +3,7 @@
         <div class="col col-lg-12">
             <h2 class="modal-title">
                 {{seed.name}}
-                    <button class="icon close" (click)="close()"><i class="bi bi-x"></i></button>
+                <button class="icon close" (click)="close()"><i class="bi bi-x"></i></button>
             </h2>
         </div>
         <div class="col-12 col-lg-6 ">
@@ -13,6 +13,9 @@
                     <div class="pot-top">
                     </div>
                     <div class="pot-base">
+                        <div class="data" *ngIf="seed.author">
+                            <p class="name">{{seed.author}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -57,6 +57,7 @@ export class NewSeedModalComponent implements OnInit {
   public typeSeed!: string;
   public form: FormGroup = new FormGroup({
     name: new FormControl("", Validators.minLength(2)),
+    author: new FormControl("", Validators.minLength(2)),
     description: new FormControl(""),
     photo: new FormControl(""),
     model: new FormControl(""),
@@ -64,9 +65,11 @@ export class NewSeedModalComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.seed = this.data.seed;
-    this.edit = this.data.edit || false;
+    if(this.data){
+      this.edit = this.data.edit || false;
+    }
     if(this.edit){
+      this.seed = this.data.seed;
       this.createEditForm();
     }
   }
