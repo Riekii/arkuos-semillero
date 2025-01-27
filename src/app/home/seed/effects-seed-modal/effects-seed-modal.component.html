@@ -6,10 +6,15 @@
         </div>
     </div>
     <div class="row effects-list">
-        <button class="primary effect cornexplosion">Explosion de palomitas</button>
+        <button class="primary effect cornexplosion" (click)="popcornStart()">Explosion de palomitas</button>
+        <button class="primary effect cornexplosion" (click)="pipesStart()">Disparos de pipa</button>
         <button class="primary effect cornexplosion">Manchas</button>
-        <button class="primary effect cornexplosion">Disparos</button>
         <button class="primary effect cornexplosion">Explosion de palomitas</button>
+    </div>
 
+    <div class="effects-container">
+        <popcorn class="popCorn" *ngFor="let popcorn of popcorns" [popCorn]="popcorn"></popcorn>
+        <sun-pipe *ngFor="let pipe of pipes" [pipe]="pipe"></sun-pipe>
     </div>
 </div>
+

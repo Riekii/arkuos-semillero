@@ -27,8 +27,6 @@ export class SunflowerComponent implements OnInit{
       this.flowers.push({
         flower: 'yes :)'
       })
-      
-
     }
   }
 
