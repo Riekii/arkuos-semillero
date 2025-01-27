@@ -10,7 +10,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { DropzoneComponent } from '../../../shared/dropzone/dropzone.component';
 import { StorageService } from '../../../service/storage.service';
-import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogClose } from '@angular/material/dialog';
 import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-modal.component';
 
 @Component({
@@ -22,6 +22,7 @@ import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-mo
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogClose,
     MatSelectModule,
     FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,
     MatIconModule],

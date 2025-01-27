@@ -1,0 +1,14 @@
+.effects-list{
+    button{
+        height: 40px;
+        font-size: 1.1em;
+        margin: 10px 0;
+        background: var(--green-mid);
+        color: white;
+        border: rgb(175, 175, 175) solid 1px;
+
+        &:hover{
+            background: var(--green-dark);
+        }
+    }
+}

@@ -1,6 +1,7 @@
 <h2 class="modal-title">
     <p *ngIf="!edit">Nueva planta</p>
     <p *ngIf="edit">Editar planta</p>
+    <button class="icon close" [matDialogClose]><i class="bi bi-x"></i></button>
 </h2>
 <div class="formulario">
     <form (ngSubmit)="sendSeed()" [formGroup]="form">

@@ -5,11 +5,11 @@
     width: 40vw !important;
     min-width: 400px !important;
 
-    &.effects{
+    &.effects {
         // opacity: 0.3;
     }
 
-    mat-dialog-container{
+    mat-dialog-container {
         padding: 0;
         border-radius: 0px;
 
@@ -20,20 +20,22 @@
     }
 }
 
-.seed-modal-detail{
+.seed-modal-detail {
     @extend .seed-modal;
     width: 90vw !important;
 }
 
-.mat-mdc-dialog-surface{
+.mat-mdc-dialog-surface {
     padding: 15px;
 }
 
-.modal-title{
+.modal-title {
     background: var(--green-dark);
     color: var(--white-mid);
     border-radius: 5px;
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 0px;
+
 
     margin-bottom: 10px;
 
@@ -41,14 +43,15 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.7em;
 
-    p{
+    p {
         margin: 0;
     }
 }
 
 
-.modal-subtitle{
+.modal-subtitle {
     color: var(--white-mid);
     font-size: 1.5em;
 }
