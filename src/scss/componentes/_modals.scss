@@ -29,7 +29,7 @@
     padding: 15px;
 }
 
-.modal-title {
+.modal-title{
     background: var(--green-dark);
     color: var(--white-mid);
     border-radius: 5px;
@@ -45,4 +45,10 @@
     p{
         margin: 0;
     }
+}
+
+
+.modal-subtitle{
+    color: var(--white-mid);
+    font-size: 1.5em;
 }

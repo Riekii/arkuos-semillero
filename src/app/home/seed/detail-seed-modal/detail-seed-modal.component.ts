@@ -62,4 +62,8 @@ export class DetailSeedModalComponent implements OnInit{
       }
     })
   }
+
+  close(){
+    this.dialog.closeAll();
+  }
 }

@@ -43,6 +43,16 @@ button {
                 background: rgb(80, 0, 0);
             }
         }
+
+        &.close{
+            color: red;
+            font-size: 1em;
+            padding: 0;
+            width: 50px;
+                &:hover {
+                    background: rgb(80, 0, 0);
+                }
+        }
     }
 
 
@@ -59,9 +69,37 @@ button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
 
-    button{
-        max-width: 40px;
+    &.actions {
+        font-size: 1.6em;
+        justify-content: flex-end;
+    }
+
+    button {
+        border-radius: 5px;
+
+        span {
+            margin-left: 5px;
+
+            @media (max-width: 600px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.actions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--green-dark);
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px 15px;
+
+    @media (max-width: 600px) {
+        padding: 3px 10px;
     }
 }

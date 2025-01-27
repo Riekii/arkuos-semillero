@@ -3,11 +3,7 @@
         <div class="col col-lg-12">
             <h2 class="modal-title">
                 {{seed.name}}
-                <div class="buttons">
-                    <button class="icon edit" (click)="editSeed()"><i class="bi bi-pencil"></i></button>
-                    <button class="icon del" (click)="delSeed()"><i class="bi bi-trash"></i></button>
-                </div>
-
+                    <button class="icon close" (click)="close()"><i class="bi bi-x"></i></button>
             </h2>
         </div>
         <div class="col-12 col-lg-6 ">
@@ -32,6 +28,22 @@
     <div class="row">
         <div class="col">
             <app-model-viewer *ngIf="model" [model]="model"></app-model-viewer>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="actions-container">
+                <h5 class="modal-subtitle">
+                    Acciones
+                </h5>
+                <div class="buttons actions">
+                    <button class="icon edit" (click)="editSeed()"><i
+                            class="bi bi-pencil"></i><span>Editar</span></button>
+                    <button class="icon del" (click)="delSeed()"><i
+                            class="bi bi-trash"></i><span>Eliminar</span></button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
