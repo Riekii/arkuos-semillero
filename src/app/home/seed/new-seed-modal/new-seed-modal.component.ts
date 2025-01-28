@@ -16,7 +16,8 @@ import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-mo
 @Component({
   selector: 'app-new-seed-modal',
   standalone: true,
-  imports: [AsyncPipe, CommonModule,
+  imports: [
+    CommonModule,
     MatRadioModule,
     DropzoneComponent,
     ReactiveFormsModule,

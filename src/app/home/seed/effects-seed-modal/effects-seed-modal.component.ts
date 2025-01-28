@@ -40,7 +40,7 @@ export class EffectsSeedModalComponent {
 
   public pipes: any = [];
   initPipes(){
-    this.pipes = this.efService.getPipes(5);
+    this.pipes = this.efService.getPipes(5);      
   }
 
 }

@@ -17,12 +17,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FirebaseService } from '../../service/firebase.service';
 import { CommonModule } from '@angular/common';
 import { SeedGenericComponent } from '../../animations/seeds/generic/generic.component';
+import { LoadingComponent } from '../../shared/loading/loading.component';
 
 
 @Component({
   selector: 'seed-container',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, SeedGenericComponent],
+  imports: [
+    CommonModule, 
+    MatFormFieldModule, 
+    LoadingComponent,
+    SeedGenericComponent
+  ],
   templateUrl: './seed.component.html',
   styleUrl: './seed.component.scss'
 })
@@ -30,6 +36,7 @@ import { SeedGenericComponent } from '../../animations/seeds/generic/generic.com
 export class SeedComponent implements OnInit {
 
   public dialog = inject(MatDialog);
+  public loading: boolean = true;
 
   fire = inject(FirebaseService);
 
@@ -40,8 +47,11 @@ export class SeedComponent implements OnInit {
   }
 
   getSeeds() {
+    this.loading = true;
     this.fire.getSeeds().subscribe((resp: any) => {
       this.seeds = resp;
+      this.loading = false;
+      console.log('cargado')
     })
   }
   
