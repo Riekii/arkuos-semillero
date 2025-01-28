@@ -1,4 +1,24 @@
-.imagen{
+.imagen {
     width: 280px;
     height: auto;
+
+
+    height: 0;
+    opacity: 0;
+
+    &.loaded {
+        height: auto;
+        opacity: 1;
+    }
+}
+
+.loadingText {
+    z-index: 1000;
+    color: white;
+    text-align: center;
+    position: relative;
+    font-size: 1.8em;
+    /* margin-top: 300px; */
+    margin-bottom: -134px;
+    margin-left: -4px;
 }

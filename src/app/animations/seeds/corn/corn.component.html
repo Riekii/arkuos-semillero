@@ -1,4 +1,4 @@
-<pot [seedData]="seedData">
+<pot [seedData]="seedData" *ngIf="!loadingSkeleton">
     <div class="corn-container">
         <div class="leaf"></div>
         <div class="corn" (click)="popcornStart()">
@@ -7,3 +7,11 @@
         <div class="leaf leaf-end"></div>
     </div>
 </pot>
+
+<div class="corn-container loading" *ngIf="loadingSkeleton">
+    <div class="leaf"></div>
+    <div class="corn" (click)="popcornStart()">
+    </div>
+    <popcorn class="popCorn" *ngFor="let popcorn of popcorns" [popCorn]="popcorn"></popcorn>
+    <div class="leaf leaf-end"></div>
+</div>

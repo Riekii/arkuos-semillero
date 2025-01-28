@@ -1,3 +1,15 @@
 <pot [seedData]="seedData">
-    <img *ngIf="imageShow" ngSrc="{{imageLink}}" class="imagen" alt="" (load)="onImageLoad()" (error)="onImageError()" width="300" height="300">
+    <!-- @defer (on viewport) { -->
+    @defer (on viewport) {
+    <img *ngIf="imageShow" ngSrc="{{imageLink}}" class="imagen" [ngClass]="{'loaded': imageLoaded}" alt="" (load)="onImageLoad()" (error)="onImageError()" width="300" height="300">
+    <div class="loadingseed-container" *ngIf="!imageLoaded">
+        <div class="loadingText">Cargando</div>
+        <seed-corn [loadingSkeleton]="true" [seedData]="seedData"></seed-corn>
+    </div>
+    } @placeholder (minimum 500ms){
+    <div class="loadingseed-container">
+        <div class="loadingText">Cargando</div>
+        <seed-corn [loadingSkeleton]="true" [seedData]="seedData"></seed-corn>
+    </div>
+    }
 </pot>
