@@ -1,7 +1,7 @@
 <div 
 class="leaf-container"
 [style.width]="width" 
-[ngClass]="even ? 'even leaftype-'+type : 'leaftype-'+type"
+[ngClass]="even ? 'even leaftype-'+ type : 'leaftype-'+type && loading ? 'loading':''"
 >
 
 </div>
