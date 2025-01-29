@@ -7,7 +7,7 @@ import { ModelViewerComponent } from '../shared/model-viewer/model-viewer.compon
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, DescriptionComponent, AboutComponent, ModelViewerComponent],
+  imports: [HeaderComponent, DescriptionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

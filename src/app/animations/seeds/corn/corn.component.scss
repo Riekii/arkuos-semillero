@@ -76,4 +76,17 @@ div.corn-container {
     &:active .corn{
         cursor: grabbing;
     }
+
+    &.loading{
+        .corn{
+            background: rgb(138, 138, 138);
+            background: linear-gradient(185deg, rgb(122, 122, 122) 46%, rgb(110, 110, 110) 45%);
+        }
+        .leaf{
+            background: rgb(58, 58, 58);
+            background: linear-gradient(220deg, rgb(88, 88, 88) 38%, rgb(85, 85, 85) 39%);
+        }
+        opacity: 0.6;
+
+    }
 }

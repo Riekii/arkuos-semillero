@@ -5,7 +5,7 @@ import { SeedComponent } from '../seed/seed.component';
 @Component({
   selector: 'app-description',
   standalone: true,
-  imports: [CornComponent, SeedComponent],
+  imports: [SeedComponent],
   templateUrl: './description.component.html',
   styleUrl: './description.component.scss'
 })

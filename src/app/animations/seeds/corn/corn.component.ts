@@ -16,6 +16,7 @@ export class CornComponent {
   popcorns: any = [];
 
   @Input() seedData: any;
+  @Input() loadingSkeleton: boolean = false;
 
   constructor(
     public shared: SharedService

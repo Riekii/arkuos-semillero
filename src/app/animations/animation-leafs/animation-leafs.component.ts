@@ -12,6 +12,7 @@ export class AnimationLeafsComponent implements OnInit {
 
   @Input() even: boolean = false;
   @Input() type!: string;
+  @Input() loading: boolean = false;
 
   public height: string = '0px';
   public width: string = '0px';
@@ -19,10 +20,12 @@ export class AnimationLeafsComponent implements OnInit {
   public borderRad: string = '';
 
   ngOnInit(): void {
+    let timeout = 0;
+    if(!this.loading){ timeout = 400;}
     setTimeout(() => {
       this.height = '150px';
       this.width = '150px';
-    }, 400);
+    }, timeout);
   }
 
 }

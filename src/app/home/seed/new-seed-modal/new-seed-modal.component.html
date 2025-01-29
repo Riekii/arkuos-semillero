@@ -14,8 +14,8 @@
 
         <div class="mb-3">
             <label for="" class="form-label">Autor</label>
-            <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                placeholder="Autor" formControlName="author" />
+            <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Autor"
+                formControlName="author" />
         </div>
         <div class="">
             <label for="" class="form-label">Descripción</label>
@@ -23,15 +23,25 @@
                 placeholder="Descripción de la semilla (opcional)" id=""></textarea>
         </div>
 
-        <div class="d-grid gap-2 mb-3">
-            <label for="" class="form-label">Foto</label>
-            <dropzone (imageEmitter)="setImage($event)"></dropzone>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="d-grid gap-2 mb-3">
+                        <label for="" class="form-label">Foto</label>
+                        <dropzone (imageEmitter)="setImage($event)"></dropzone>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-6">
+                    <div class="d-grid gap-2 mb-3">
+                        <label for="" class="form-label">Modelo 3d</label>
+                        <dropzone [type]="1" (imageEmitter)="setImage($event, 1)"></dropzone>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="d-grid gap-2 mb-3">
-            <label for="" class="form-label">Modelo 3d</label>
-            <dropzone [type]="1" (imageEmitter)="setImage($event, 1)"></dropzone>
-        </div>
+
+
 
         <div class="d-grid gap-2">
             <button type="button" name="" id="" (click)="openEffects()" class="btn submit">
