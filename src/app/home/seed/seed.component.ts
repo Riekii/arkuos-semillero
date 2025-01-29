@@ -50,7 +50,7 @@ export class SeedComponent implements OnInit {
     this.loading = true;
     this.fire.getSeeds().subscribe((resp: any) => {
       this.seeds = resp;
-      this.loading = true;
+      this.loading = false;
     })
   }
   
