@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 export class FirebaseService {
 
   public fire = inject(Firestore);
-  // publi
 
   public colSeeds = collection(this.fire, 'semillas');
   public seeds$!: Observable<any[]>;
@@ -23,6 +22,7 @@ export class FirebaseService {
   }
   // RECOGER LISTADO DE SEMILLAS 
   public getSeeds() {
+    console.log('RECOGIENDO SEMILLAS')
     this.seeds$ = collectionData(this.colSeeds, { idField: 'id' }) as Observable<any[]>;
     return this.seeds$;
   }
