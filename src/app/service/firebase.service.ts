@@ -22,7 +22,7 @@ export class FirebaseService {
   }
   // RECOGER LISTADO DE SEMILLAS 
   public getSeeds() {
-    console.log('RECOGIENDO SEMILLAS')
+    console.log('RECOGIENDO SEMILLAS');
     this.seeds$ = collectionData(this.colSeeds, { idField: 'id' }) as Observable<any[]>;
     return this.seeds$;
   }
