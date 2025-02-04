@@ -27,7 +27,6 @@ export class FirebaseService {
       q = query(this.colSeeds, orderBy("date", "desc"), where(filter, "==", value));
     }
     
-    console.log(value, 'BUSCANDO')
     this.seeds$ = collectionData(q, { 
       idField: 'id',
     }) as Observable<any[]>;
