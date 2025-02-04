@@ -18,7 +18,6 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "ES2020",
-    "useDefineForClassFields": true,
     "lib": [
       "ES2018",
       "dom"
