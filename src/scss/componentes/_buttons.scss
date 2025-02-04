@@ -3,13 +3,22 @@ button {
     background: white;
     color: black;
     border: 1px solid black;
+    font-size: 1.4em;
+    background-size: 50px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     &.btn-dirt {
-        background: none;
-        background-image: url('../../assets/textures/dirt-background.webp');
+        background: rgb(106, 213, 255);
+        background: linear-gradient(180deg, rgba(106, 213, 255, 0.36262254901960786) 0%, rgba(0, 0, 0, 0.3287289915966386) 0%);
+        // background-image: url('../../assets/textures/dirt-background.webp');
         border-color: var(--brown-mid);
         font-size: 1.4em;
         background-size: 50px;
+        color: white;
 
         &:hover {
             border-color: var(--brown-mid);
@@ -26,10 +35,23 @@ button {
         border: none !important;
         font-size: 0.9em;
 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        padding: 5px 20px;
+
+        span {
+            @media (max-width: 600px) {
+                display: none;
+            }
+        }
+
         &.edit {
             // background-color: var(--orange-light);
             color: var(--orange-light);
-
 
             &:hover {
                 background: var(--orange-dark);
@@ -45,6 +67,17 @@ button {
             }
         }
 
+        &.dirt {
+            color: white;
+            background-color: var(--brown-dark);
+            border: var(--brown-mid) solid 2px;
+
+            &:hover {
+                background: var(--brown-light);
+                color: white;
+            }
+        }
+
         &.close {
             color: white;
             font-size: 1em;
@@ -54,6 +87,15 @@ button {
             &:hover {
                 background: rgb(255, 54, 54);
             }
+        }
+    }
+
+    .icon-only {
+        padding: 0;
+        margin: 0;
+
+        i {
+            width: 100%;
         }
     }
 
@@ -80,14 +122,6 @@ button {
 
     button {
         border-radius: 5px;
-
-        span {
-            margin-left: 5px;
-
-            @media (max-width: 600px) {
-                display: none;
-            }
-        }
     }
 }
 
