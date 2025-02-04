@@ -31,7 +31,7 @@
                         <dropzone (imageEmitter)="setImage($event)"></dropzone>
                     </div>
                 </div>
-                <div class="col-12 col-xl-6">
+                <div class="col-12 col-md-6">
                     <div class="d-grid gap-2 mb-3">
                         <label for="" class="form-label">Modelo 3d</label>
                         <dropzone [type]="1" (imageEmitter)="setImage($event, 1)"></dropzone>
@@ -39,8 +39,6 @@
                 </div>
             </div>
         </div>
-
-
 
 
         <div class="d-grid gap-2">
@@ -58,6 +56,8 @@
     </form>
 
 </div>
+
+<loading *ngIf="loading"></loading>
 
 
 

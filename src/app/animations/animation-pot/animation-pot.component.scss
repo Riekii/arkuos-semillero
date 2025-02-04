@@ -1,6 +1,17 @@
-.desc{
+.desc {
     padding: 0 27px 10px 27px;
     max-height: 70px;
-        display: block;
-        overflow: auto;
+    display: block;
+    overflow: auto;
+}
+
+.author{
+    margin: 0;
+    opacity: 0.7;
+    margin-top: -10px;
+}
+
+
+p.name{
+    margin-bottom: 0;
 }

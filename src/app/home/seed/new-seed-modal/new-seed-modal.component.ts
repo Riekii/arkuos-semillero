@@ -12,6 +12,7 @@ import { DropzoneComponent } from '../../../shared/dropzone/dropzone.component';
 import { StorageService } from '../../../service/storage.service';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogClose } from '@angular/material/dialog';
 import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-modal.component';
+import { LoadingComponent } from '../../../shared/loading/loading.component';
 
 @Component({
   selector: 'app-new-seed-modal',
@@ -25,6 +26,7 @@ import { EffectsSeedModalComponent } from '../effects-seed-modal/effects-seed-mo
     MatInputModule,
     MatDialogClose,
     MatSelectModule,
+    LoadingComponent,
     FormsModule, MatFormFieldModule, MatSelectModule, MatInputModule,
     MatIconModule],
   templateUrl: './new-seed-modal.component.html',
@@ -41,6 +43,7 @@ export class NewSeedModalComponent implements OnInit {
 
   public seed: any;
   public edit: boolean = false;
+  public loading: boolean = false;
 
   constructor(
     public store: StorageService,
@@ -81,6 +84,7 @@ export class NewSeedModalComponent implements OnInit {
   }
 
   sendSeed(){
+    this.loading = true;
     if(this.stl) this.form.get('model')?.setValue(1);
     else this.form.get('model')?.setValue(0);
 
@@ -107,7 +111,9 @@ export class NewSeedModalComponent implements OnInit {
               file: this.stl
             }
           )
-        }
+        };
+
+        this.loading = false;
       })
     }
     else{
