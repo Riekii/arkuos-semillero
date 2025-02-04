@@ -18,7 +18,7 @@ export class AnimationPotComponent implements OnInit{
 
   ngOnInit(): void {
     if(this.seedData && !this.seedData.author){
-      this.seedData.author = 'random';
+      this.seedData.author = 'Random';
     }
   }
 
