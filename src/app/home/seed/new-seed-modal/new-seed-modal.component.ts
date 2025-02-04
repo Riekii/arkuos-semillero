@@ -112,7 +112,6 @@ export class NewSeedModalComponent implements OnInit {
             }
           )
         };
-
         this.loading = false;
       })
     }
@@ -137,7 +136,8 @@ export class NewSeedModalComponent implements OnInit {
               file: this.stl
             }
           )
-        }
+        };
+        this.loading = false;
       })
     }
     
