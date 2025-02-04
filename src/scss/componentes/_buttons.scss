@@ -53,13 +53,15 @@ button {
             // background-color: var(--orange-light);
             color: var(--orange-light);
 
+            background: rgba(255, 166, 0, 0.304);
             &:hover {
                 background: var(--orange-dark);
             }
         }
 
         &.del {
-            color: red;
+            color: rgb(255, 255, 255);
+            background: rgba(255, 0, 0, 0.274);
 
             &:hover {
                 background: rgb(255, 54, 54);
