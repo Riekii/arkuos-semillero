@@ -1,15 +1,11 @@
-<!-- <button class="btn btn-primary btn-dirt tiny" (click)="openSeed()">
-    <span class="text">Nueva planta</span>
-</button> -->
-
-<div class="container-search">
+<div class="container-search" *ngIf="!firstLoad">
     <input class="seedSearch" placeholder="Busca una planta..." (keyup)="searchSeed($event)">
     <button class="icon dirt" (click)="openSeed()">
         <i class="bi bi-flower1"></i> <span>Plantar</span>
     </button>
 </div>
 
-<div class="container-fluid min-container">
+<div class="container-fluid min-container" *ngIf="!firstLoad">
     <div class="row">
         <div class="col-12 col-md-6 col-xl-3" *ngFor="let seed of seedsSearched">
             <!-- <seed-corn *ngIf="seed.type === 'corn'" [seedData]="seed"></seed-corn>

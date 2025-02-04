@@ -42,6 +42,7 @@ export class SeedComponent implements OnInit {
   public dialog = inject(MatDialog);
 
   public loading: boolean = true;
+  public firstLoad: boolean = true;
 
   fire = inject(FirebaseService);
 
@@ -57,6 +58,7 @@ export class SeedComponent implements OnInit {
     this.fire.getSeeds().subscribe((resp: any) => {
       this.seeds = resp;
       this.seedsSearched = resp;
+      this.firstLoad = false;
       this.loading = false;
     })
   }
