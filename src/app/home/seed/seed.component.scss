@@ -1,8 +1,8 @@
-.btn-dirt{
+.btn-dirt {
     margin: 5px;
 }
 
-.delSeed{
+.delSeed {
     width: fit-content;
     height: fit-content;
     font-size: 1.6em;
@@ -11,13 +11,51 @@
     margin-top: -68px;
 }
 
-.seedMargin{
+.seedMargin {
     margin-bottom: 15px;
 }
 
-.loadingseed-container{
+.loadingseed-container {
     background: red;
     display: flex;
     width: 100px;
     height: 100px;
+}
+
+.container-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 0 4px;
+
+    button.icon {
+        font-size: 1.2em;
+        height: 40px;
+
+    }
+
+}
+
+.seedSearch {
+    width: 100%;
+    background: rgb(106, 213, 255);
+    background: linear-gradient(180deg, rgba(106, 213, 255, 0.46262254901960786) 0%, rgba(0, 0, 0, 0.6166841736694677) 0%);
+    border: none;
+    border-bottom: 2px var(--brown-light) solid;
+    color: white;
+    font-size: 1.4em;
+    padding: 5px 15px;
+
+    position: sticky;
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+.min-container {
+    min-height: 100vh;
 }

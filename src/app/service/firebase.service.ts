@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, deleteDoc, doc, updateDoc, limit, orderBy, query, collectionData, where } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 
@@ -21,9 +21,15 @@ export class FirebaseService {
     return addDoc(this.colSeeds, semilla);
   }
   // RECOGER LISTADO DE SEMILLAS 
-  public getSeeds() {
-    console.log('RECOGIENDO SEMILLAS');
-    this.seeds$ = collectionData(this.colSeeds, { idField: 'id' }) as Observable<any[]>;
+  public getSeeds(filter: string = 'name', value?: string) {
+    let q = query(this.colSeeds, orderBy("date", "desc"));
+    if(value){
+      q = query(this.colSeeds, orderBy("date", "desc"), where(filter, "==", value));
+    }
+    
+    this.seeds$ = collectionData(q, { 
+      idField: 'id',
+    }) as Observable<any[]>;
     return this.seeds$;
   }
   // EDITAR UNA SEMILLA

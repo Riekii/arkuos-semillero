@@ -18,6 +18,7 @@ import { FirebaseService } from '../../service/firebase.service';
 import { CommonModule } from '@angular/common';
 import { SeedGenericComponent } from '../../animations/seeds/generic/generic.component';
 import { LoadingComponent } from '../../shared/loading/loading.component';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 
 
 @Component({
@@ -27,7 +28,10 @@ import { LoadingComponent } from '../../shared/loading/loading.component';
     CommonModule, 
     MatFormFieldModule, 
     LoadingComponent,
-    SeedGenericComponent
+    SeedGenericComponent,
+
+    MatIconModule,
+    MatFormFieldModule
   ],
   templateUrl: './seed.component.html',
   styleUrl: './seed.component.scss'
@@ -36,11 +40,13 @@ import { LoadingComponent } from '../../shared/loading/loading.component';
 export class SeedComponent implements OnInit {
 
   public dialog = inject(MatDialog);
+
   public loading: boolean = true;
 
   fire = inject(FirebaseService);
 
   public seeds!: any[];
+  public seedsSearched!: any[];
 
   ngOnInit(): void {
     this.getSeeds();
@@ -50,10 +56,10 @@ export class SeedComponent implements OnInit {
     this.loading = true;
     this.fire.getSeeds().subscribe((resp: any) => {
       this.seeds = resp;
+      this.seedsSearched = resp;
       this.loading = false;
     })
   }
-  
 
   delSeed(seedId: string) {
     this.fire.delSeed(seedId)
@@ -69,4 +75,20 @@ export class SeedComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
   }
+
+  searchSeed(name: any){
+    let searchword = name.target.value;
+
+    if(searchword){
+      this.fire.getSeeds('name', searchword.toLowerCase()).subscribe((resp: any) => {
+        this.seedsSearched = resp;
+      });
+    }
+    else{
+      this.getSeeds();
+    }
+    
+    
+  }
+
 }
