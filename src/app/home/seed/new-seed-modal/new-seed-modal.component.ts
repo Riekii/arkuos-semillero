@@ -65,7 +65,8 @@ export class NewSeedModalComponent implements OnInit {
     description: new FormControl(""),
     photo: new FormControl(""),
     model: new FormControl(""),
-    type: new FormControl("") 
+    type: new FormControl(""),
+    date: new FormControl(new Date())
   });
 
   ngOnInit(): void {
@@ -87,6 +88,7 @@ export class NewSeedModalComponent implements OnInit {
     this.loading = true;
     if(this.stl) this.form.get('model')?.setValue(1);
     else this.form.get('model')?.setValue(0);
+    this.form.get('name')?.setValue(this.form.get('name')?.value.toLowerCase())
 
     if(this.edit){
       this.fire.editSeed(this.seed.id, this.form.value).then((resp: any) => {
