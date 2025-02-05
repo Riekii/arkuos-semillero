@@ -57,7 +57,6 @@ export class SeedComponent implements OnInit {
   ngOnInit(): void {
     this.getSeeds();
     this.auth.user$.subscribe((aUser: User | null) => {
-      console.log(aUser)
       this.user = aUser;
     })
     

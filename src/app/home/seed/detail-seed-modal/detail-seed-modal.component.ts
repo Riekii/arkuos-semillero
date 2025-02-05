@@ -7,6 +7,8 @@ import { ModelViewerComponent } from '../../../shared/model-viewer/model-viewer.
 import { AnimationPotComponent } from '../../../animations/animation-pot/animation-pot.component';
 import { FirebaseService } from '../../../service/firebase.service';
 import { NewSeedModalComponent } from '../new-seed-modal/new-seed-modal.component';
+import { FireauthService } from '../../../service/fireauth.service';
+import { User } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-detail-seed-modal',
@@ -15,15 +17,17 @@ import { NewSeedModalComponent } from '../new-seed-modal/new-seed-modal.componen
   templateUrl: './detail-seed-modal.component.html',
   styleUrl: './detail-seed-modal.component.scss'
 })
-export class DetailSeedModalComponent implements OnInit{
+export class DetailSeedModalComponent implements OnInit {
 
   public seed: any;
   public imageLink!: string;
-  public model: any; 
-    
+  public model: any;
+  public user!: User | null;
+
   // private seedsComponents = @Inject(...)
   public dialog = inject(MatDialog);
-  
+  public auth = inject(FireauthService)
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     public store: StorageService,
@@ -31,12 +35,15 @@ export class DetailSeedModalComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
+    this.auth.user$.subscribe((aUser: User | null) => {
+      this.user = aUser;
+    })
     this.seed = this.data.seed;
-    this.imageLink = environment.storageRef + 'images%2F'+this.data.seed.id + '?alt=media';
-    if(this.seed.model)this.getModel()
+    this.imageLink = environment.storageRef + 'images%2F' + this.data.seed.id + '?alt=media';
+    if (this.seed.model) this.getModel();
   }
 
-  getModel(){
+  getModel() {
     this.store.getStoreSeedModel(this.seed.id).then((url) => {
       this.model = url;
     })
@@ -53,7 +60,7 @@ export class DetailSeedModalComponent implements OnInit{
     this.dialog.closeAll();
   }
 
-  editSeed(){
+  editSeed() {
     this.dialog.open(NewSeedModalComponent, {
       panelClass: 'seed-modal',
       data: {
@@ -63,7 +70,7 @@ export class DetailSeedModalComponent implements OnInit{
     })
   }
 
-  close(){
+  close() {
     this.dialog.closeAll()
   }
 }
