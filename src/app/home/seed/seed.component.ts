@@ -20,6 +20,7 @@ import { SeedGenericComponent } from '../../animations/seeds/generic/generic.com
 import { LoadingComponent } from '../../shared/loading/loading.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { FireauthService } from '../../service/fireauth.service';
+import { User } from '@angular/fire/auth';
 
 
 @Component({
@@ -55,6 +56,10 @@ export class SeedComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSeeds();
+    this.auth.user$.subscribe((aUser: User | null) => {
+      console.log(aUser)
+      this.user = aUser;
+    })
     
     if (localStorage.getItem('fireToken') && localStorage.getItem('fireToken')  != ''){this.logged = true}
   }
@@ -97,8 +102,10 @@ export class SeedComponent implements OnInit {
     }
   }
 
+  public user!: User | null;
   loginGoogle(){
     this.auth.loginGoogle();
+
   }
 
 }

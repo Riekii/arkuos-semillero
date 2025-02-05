@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
-import { provideAuth, getAuth, Auth, GoogleAuthProvider, signInWithPopup } from '@angular/fire/auth';
+import { provideAuth, getAuth, Auth, GoogleAuthProvider, signInWithPopup, user, User } from '@angular/fire/auth';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ import { provideAuth, getAuth, Auth, GoogleAuthProvider, signInWithPopup } from 
 export class FireauthService {
 
   private auth = inject(Auth);
+  user$ = user(this.auth);
+  userSubscription!: Subscription;
 
   constructor() {
   }
@@ -24,10 +27,6 @@ export class FireauthService {
         const token = credential?.accessToken;
         // The signed-in user info.
         const user = result.user;
-        console.log(user)
-
-        localStorage.setItem('fireToken', token || '');
-        window.location.reload();
         
       }).catch((error) => {
         // Handle Errors here.
@@ -40,5 +39,10 @@ export class FireauthService {
         // ...
         console.error(errorCode)
       });
+  }
+
+  ngOnDestroy() {
+    // when manually subscribing to an observable remember to unsubscribe in ngOnDestroy
+    this.userSubscription.unsubscribe();
   }
 }

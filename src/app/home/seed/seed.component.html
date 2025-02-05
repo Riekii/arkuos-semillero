@@ -1,10 +1,10 @@
 <div class="container-search" *ngIf="!firstLoad">
     <input class="seedSearch" placeholder="Busca una planta..." (keyup)="searchSeed($event)">
-    <button class="icon dirt" (click)="openSeed()" *ngIf="logged">
+    <button class="icon dirt" (click)="openSeed()" *ngIf="user">
         <i class="bi bi-flower1"></i> <span>Plantar</span>
     </button>
 
-    <button class="icon del" (click)="loginGoogle()"  *ngIf="!logged">
+    <button class="icon del" (click)="loginGoogle()"  *ngIf="!user">
         <i class="bi bi-key-fill"></i><span>Login</span>
     </button>
 </div>
