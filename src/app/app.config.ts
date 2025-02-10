@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -11,7 +11,6 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { BrowserModule } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,14 +26,3 @@ export const appConfig: ApplicationConfig = {
     providePerformance(() => getPerformance()), 
   ]
 };
-// bootstrapApplication(AppComponent, {
-//   providers: [
-//     importProvidersFrom(
-//       provideFirebaseApp(() => initializeApp(environment.firebase))
-//     ),
-//     importProvidersFrom(
-//       provideFirestore(() => getFirestore())
-//     )
-//   ]
-// })
-
