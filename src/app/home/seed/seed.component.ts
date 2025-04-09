@@ -21,6 +21,10 @@ import { LoadingComponent } from '../../shared/loading/loading.component';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { FireauthService } from '../../service/fireauth.service';
 import { User } from '@angular/fire/auth';
+import { BlueberryComponent } from 'src/app/animations/seeds/seed-blueberry/blueberry/blueberry.component';
+import { RoseComponent } from 'src/app/animations/seeds/rose/rose.component';
+import { DragonComponent } from 'src/app/animations/seeds/dragon/dragon.component';
+import { StrawberryComponent } from 'src/app/animations/seeds/strawberry/strawberry.component';
 
 
 @Component({
@@ -31,8 +35,14 @@ import { User } from '@angular/fire/auth';
     MatFormFieldModule, 
     LoadingComponent,
     SeedGenericComponent,
-
+    CornComponent,
+    SunflowerComponent,
+    BlueberryComponent,
+    RoseComponent,
+    DragonComponent,
+    StrawberryComponent,
     MatIconModule,
+  
     MatFormFieldModule
   ],
   templateUrl: './seed.component.html',

@@ -12,12 +12,12 @@
 <div class="container-fluid min-container" *ngIf="!firstLoad">
     <div class="row">
         <div class="col-12 col-md-6 col-xl-3" *ngFor="let seed of seedsSearched">
-            <!-- <seed-corn *ngIf="seed.type === 'corn'" [seedData]="seed"></seed-corn>
-            <seed-sunflower *ngIf="seed.type === 'sunflower'" [seedData]="seed"></seed-sunflower>
-            <seed-blueberry *ngIf="seed.type === 'blue'" [seedData]="seed"></seed-blueberry>pkñkñ
-            <seed-rose *ngIf="seed.type === 'rose'" [seedData]="seed"></seed-rose> 
-            <seed-dragon *ngIf="seed.type === 'dragon'" [seedData]="seed"></seed-dragon>    
-            <seed-strawberry *ngIf="seed.type === 'strawberry'" [seedData]="seed"></seed-strawberry>     -->
+            <seed-corn [seedData]="seed"></seed-corn>
+            <seed-sunflower [seedData]="seed"></seed-sunflower>
+            <!-- <seed-blueberry [seedData]="seed"></seed-blueberry> -->
+            <seed-rose [seedData]="seed"></seed-rose> 
+            <seed-dragon [seedData]="seed"></seed-dragon>    
+            <seed-strawberry  [seedData]="seed"></seed-strawberry>    
 
             <seed-generic [seedData]="seed"></seed-generic>
 
