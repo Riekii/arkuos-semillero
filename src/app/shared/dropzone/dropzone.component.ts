@@ -26,7 +26,7 @@ export class DropzoneComponent {
   public fileType!: string;
 
   // DRAGNDROP
-  public imgTypes = ['image/png', 'image/jpg', 'image/jpeg'];
+  public imgTypes = ['image/png', 'image/gif', 'image/jpg', 'image/jpeg'];
   onSelect(event: any) {
     const file: File = event.addedFiles[0];
 
@@ -36,7 +36,7 @@ export class DropzoneComponent {
       if (file) {
         this.convertToBase64(file);
       }
-    }
+    } 
     else {
       if(this.type === 1){
         this.fileUpdated = event.addedFiles[0];
