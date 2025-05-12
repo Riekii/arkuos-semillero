@@ -44,7 +44,7 @@ export class SeedComponent implements OnInit {
   public dialog = inject(MatDialog);
   public auth = inject(FireauthService);
 
-  public logged: boolean = false;
+  public logged: boolean = true;
 
   public loading: boolean = true;
   public firstLoad: boolean = true;
